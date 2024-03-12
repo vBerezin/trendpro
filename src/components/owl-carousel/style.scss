@@ -1,0 +1,75 @@
+@import "~common/styles/variables/transition";
+
+@import "~owl.carousel/dist/assets/owl.carousel.min.css";
+@import "~owl.carousel/dist/assets/owl.theme.default.min.css";
+
+.owl-carousel {
+  direction: ltr;
+  .owl-item {
+    img {
+      width: auto;
+    }
+  }
+  .owl-nav {
+    button.owl-prev,
+    button.owl-next {
+      display: block;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+      position: absolute;
+      font-size: 15px;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      color: #fff;
+      background: #F78B3D;
+      top: 50%;
+      margin-top: -1em;
+
+      &:hover {
+        background-color: darken(#F78B3D, 10%);
+      }
+      &.disabled {
+        visibility: hidden;
+      }
+    }
+    button.owl-prev {
+      left: 0;
+    }
+    button.owl-next {
+      right: 0;
+    }
+  }
+  .owl-dots {
+    text-align: center;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+    direction: ltr;
+    margin-top: 15px;
+
+    button.owl-dot {
+      display: inline-block;
+      vertical-align: top;
+      border-radius: 50%;
+      box-shadow: none;
+      padding: 0;
+      outline: none;
+      border: none;
+      width: 6px;
+      height: 6px;
+      background: #E0E8EB;
+      margin: 0 4px;
+      transition: background $transition-time;
+      &.active {
+        background: #625878;
+      }
+    }
+  }
+}
+.owl-drag {
+  cursor: move;
+}
+
+

@@ -1,0 +1,55 @@
+@import "styles/variables/fonts";
+@import "styles/variables/colors";
+
+body,
+html {
+  font-size: $font-size;
+  font-weight: $font-weight-regular;
+  font-family: $font-family;
+  line-height: 1.4;
+  color: $color-text;
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+small,
+.small {
+  color: inherit;
+  font-size: 75%;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: #F78B3D;
+  text-decoration: none;
+}
+
+ul,
+ol,
+table,
+p {
+  margin: 1em 0;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+
+li {
+  margin: 0.5em 0;
+}
+
+.is-disabled,
+[disabled] {
+  cursor: not-allowed;
+}
+
+.is-loading {
+  cursor: progress;
+}

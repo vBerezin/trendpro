@@ -1,0 +1,45 @@
+.icon-box {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  color: #383838;
+  background: none;
+  line-height: 0;
+  border-radius: 16px;
+  border: 5px solid rgba(#E6E6E6, 0.14);
+}
+
+.icon-box__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  width: 38px;
+  height: 38px;
+  background: #E6E6E6;
+}
+
+
+.icon-box.icon-box--small {
+  border-width: 3px;
+
+  .icon-box__inner {
+    width: 30px;
+    height: 30px;
+  }
+}
+.icon-box.icon-box--whatsapp {
+  color: #fff;
+
+  .icon-box__inner {
+    background-color: #9CD300;
+  }
+}
+.icon-box.icon-box--telegram {
+  color: #fff;
+
+  .icon-box__inner {
+    background-color: #32C5FF;
+  }
+}

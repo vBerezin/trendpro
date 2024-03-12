@@ -1,0 +1,19 @@
+include ~templates/functions/mods
+
+block variables
+	include ~templates/variables
+
+doctype html
+html(lang='ru')
+	head
+		block head
+			title #{TITLE}
+			include ~templates/meta
+			include ~templates/favicon
+			block stylesheets
+				link(rel="stylesheet" href=`index.css?${$.version}`)
+	body
+		block body
+		include ~templates/sprite
+		block scripts
+			script(src=`index.js?${$.version}`)

@@ -1,0 +1,14 @@
+include ~components/icon/mixin
+
+mixin icon-box(data)
+	-
+		data = data || {};
+		tag = data.tagName || 'div';
+	#{tag}.icon-box(
+		class=data.class
+		class=mods('icon-box', data.mods)
+	)&attributes(data.attributes)
+		span.icon-box__inner
+			if (data.icon)
+				+icon(data.icon)
+			block

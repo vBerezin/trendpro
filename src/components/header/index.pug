@@ -1,0 +1,33 @@
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/icon-box/mixin
+
+header.header
+	+container
+		.header__top
+			.header__logo
+				a(href="#")
+					+image({ src: '/images/logo.svg', alt: 'Trend-Pro' })
+			+icon-box({
+				class: 'header__social',
+				icon: 'whatsapp',
+				mods: ['whatsapp', 'small'],
+				tagName: 'a',
+				attributes: {
+					href: '#'
+				}
+			})
+			+icon-box({
+				class: 'header__social',
+				icon: 'telegram',
+				mods: ['telegram', 'small'],
+				tagName: 'a',
+				attributes: {
+					href: '#'
+				}
+			})
+			+icon-box({
+				class: 'header__nav-toggle',
+				mods: ['small'],
+				tagName: 'button',
+			}) +

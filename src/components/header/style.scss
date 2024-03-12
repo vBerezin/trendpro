@@ -1,0 +1,46 @@
+.header {
+  background: #000;
+  color: #fff;
+}
+
+.header__top {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+.header__logo {
+  font-size: 0;
+  line-height: 0;
+  flex: 1 0 auto;
+}
+
+.header__social {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.header__nav-toggle {
+  font-size: 0;
+  margin-left: 20px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 1px;
+    margin-left: -6px;
+    background: #000;
+  }
+  &::before {
+    margin-top: -3px;
+  }
+  &::after {
+    margin-top: 1px;
+  }
+}

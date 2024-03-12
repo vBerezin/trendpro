@@ -1,0 +1,7 @@
+mixin container(data)
+	- data = data || {};
+	.container(
+		class=data.class
+		class=mods('container', data.mods)
+		)&attributes(data.attributes)
+		block
