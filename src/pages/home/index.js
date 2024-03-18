@@ -1,7 +1,16 @@
 import './style.scss'
 
-import '~components/header'
 import '~components/container'
 import '~components/image'
 import '~components/icon'
-import '~components/icon-box'
+import '~components/button'
+import '~components/input'
+import '~components/section'
+import '~components/section-head'
+import '~components/section-title'
+
+import '~containers/layoutPage'
+import '~containers/header'
+import '~containers/icon-box'
+import '~containers/footer'
+import '~containers/section-feedback'

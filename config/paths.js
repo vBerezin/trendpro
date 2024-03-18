@@ -27,8 +27,9 @@ module.exports = {
     '~styles': `${src}/styles`,
     '~scripts': `${src}/scripts`,
     '~components': `${src}/components`,
-    '~static': `${src}/static`,
+    '~containers': `${src}/containers`,
     '~pages': `${src}/pages`,
+    '~static': `${build}/static`,
     '~images': `${build}/images`,
   },
   webpack: {

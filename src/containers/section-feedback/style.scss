@@ -1,0 +1,59 @@
+@import "~styles/variables/fonts.scss";
+
+.section-feedback {
+  color: #fff;
+  background-color: #2B2B2B;
+  background-image: linear-gradient(to bottom, #2B2B2B, #242424);
+}
+.section-feedback__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.section-feedback__main {
+  flex: 1 1 auto;
+}
+.section-feedback__title {
+  max-width: 450px;
+}
+.section-feedback__image {
+  font-size: 0;
+  line-height: 0;
+  flex: 0 1 auto;
+}
+.section-feedback__form {
+  max-width: 260px;
+}
+.section-feedback__privacy {
+  text-align: center;
+  font-size: 10px;
+  font-weight: $font-weight-light;
+  color: #969696;
+  margin-top: 20px;
+}
+.section-feedback__field,
+.section-feedback__button {
+  margin-top: 20px;
+}
+
+.section-feedback__success {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 280px;
+}
+.section-feedback__success-box {
+  text-align: left;
+  border: 1px solid #ACACAC;
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-bottom: 40px;
+}
+.section-feedback__success-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  color: #DFFF13;
+}
+.section-feedback__success-link {
+  text-decoration: underline;
+}

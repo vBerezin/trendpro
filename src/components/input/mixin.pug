@@ -1,0 +1,7 @@
+mixin input(data)
+	-
+		data = data || {};
+	input.input(
+		class=data.class
+		class=mods('input', data.mods)
+	)&attributes(data.attributes)

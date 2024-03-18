@@ -1,1 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import "~styles/variables/fonts.scss";
+
+$fonts-map: (
+  'Gilroy-Light': $font-weight-light,
+  'Gilroy-Regular': $font-weight-regular,
+  'Gilroy-Medium': $font-weight-medium,
+  'Gilroy-SemiBold': $font-weight-semiBold,
+  'Gilroy-Bold': $font-weight-bold,
+);
+
+@each $font-name, $font-weight in $fonts-map {
+  $font-path: '/static/fonts/#{$font-name}';
+
+  @font-face {
+    font-family: 'Gilroy';
+    font-weight: $font-weight;
+    font-display: swap;
+    font-style: normal;
+    src: local('Gilroy');
+    src:
+      url('#{$font-path}.eot');
+    src:
+      url('#{$font-path}.eot') format('embedded-opentype'),
+      url('#{$font-path}.woff') format('woff'),
+      url('#{$font-path}.ttf') format('truetype');
+  }
+}

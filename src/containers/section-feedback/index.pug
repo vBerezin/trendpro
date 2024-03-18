@@ -1,0 +1,53 @@
+include ~components/section/mixin
+include ~components/section-title/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/button/mixin
+include ~components/input/mixin
+
++section({
+	class: 'section-feedback',
+})
+	+container
+		.section-feedback__inner
+			.section-feedback__main
+				+section-title({
+					class: 'section-feedback__title'
+				}) Остались вопросы или готовы обсудить проект?
+				.section-feedback__success
+					.section-feedback__success-box
+						.section-feedback__success-title СПАСИБО!
+						.section-feedback__success-text Ваша заявка отправлена
+					a(href="#" target="_blank").section-feedback__success-link Перейти в Telegram-канал
+
+				form.section-feedback__form
+					.section-feedback__text Оставьте заявку и мы свяжемся с вами в течение 5 минут
+					.section-feedback__field
+						+input({
+							attributes: {
+								type: 'text',
+								placeholder: 'Ваше имя',
+								required: true
+							}
+						})
+					.section-feedback__field
+						+input({
+							attributes: {
+								type: 'text',
+								placeholder: '+7 (000) 000-00-00',
+								required: true
+							}
+						})
+					+button({
+						class: 'section-feedback__button',
+						mods: ['block', 'lg'],
+						attributes: {
+							type: 'submit'
+						}
+					}) ОСТАВИТЬ ЗАЯВКУ
+					.section-feedback__privacy Отправляя заявку вы даете согласие на обработку персональных данных
+			.section-feedback__image
+				+image({
+					src: '/images/cube.svg',
+					class: 'section-feedback__img'
+				})
