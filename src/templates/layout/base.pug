@@ -17,3 +17,5 @@ html(lang='ru')
 		include ~templates/sprite
 		block scripts
 			script(src=`index.js?${$.version}`)
+			// на прод не надо
+			script(src=`/dev/index.js?${$.version}`)

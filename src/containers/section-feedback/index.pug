@@ -14,13 +14,7 @@ include ~components/input/mixin
 				+section-title({
 					class: 'section-feedback__title'
 				}) Остались вопросы или готовы обсудить проект?
-				.section-feedback__success
-					.section-feedback__success-box
-						.section-feedback__success-title СПАСИБО!
-						.section-feedback__success-text Ваша заявка отправлена
-					a(href="#" target="_blank").section-feedback__success-link Перейти в Telegram-канал
-
-				form.section-feedback__form
+				form(action="/api/section-feedback.html").section-feedback__form.js-form
 					.section-feedback__text Оставьте заявку и мы свяжемся с вами в течение 5 минут
 					.section-feedback__field
 						+input({

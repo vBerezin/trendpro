@@ -1,0 +1,24 @@
+.section-reviews {
+  color: #fff;
+  background-color: #333333;
+  background-image: linear-gradient(to bottom, #333333, #2B2B2B);
+}
+.section-reviews__head {
+  b,
+  strong {
+    color: #DFFF13;
+  }
+}
+.section-reviews__body {
+  overflow: hidden;
+}
+.section-reviews__slider {
+  margin: 0 -15px;
+  overflow: visible;
+}
+.section-reviews__slide {
+  font-size: 0;
+  line-height: 0;
+  width: 160px;
+  padding: 0 15px;
+}

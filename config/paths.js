@@ -34,7 +34,10 @@ module.exports = {
   },
   webpack: {
     context: src,
-    entries,
+    entries: {
+      ...entries,
+      dev: `${src}/scripts/dev.js`
+    },
     dest: build,
   },
   static: {

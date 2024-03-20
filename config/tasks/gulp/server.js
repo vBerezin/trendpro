@@ -3,7 +3,7 @@ module.exports = () => {
     const Server = $.webpackServer;
     const webpack = $.webpack($.webpackConfig);
     const options = Object.assign($.webpackConfig.devServer, {
-      open: true,
+      open: false,
       contentBase: $.paths.server.base,
       watchContentBase: true,
       hot: true,
