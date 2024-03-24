@@ -1,5 +1,4 @@
-$container-width: 930px;
-$container-padding: 20px;
+@import "~styles/variables/layout.scss";
 
 .container {
   padding: 0 $container-padding;

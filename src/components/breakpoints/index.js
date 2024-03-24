@@ -1,9 +1,10 @@
-export class Breakpoints {
+import * as points from '~styles/breakpoints.scss';
+class BreakpointsClass {
   #stream;
   #media;
   constructor(points) {
     this.current = '';
-    this.points = {};
+    this.points = [];
     this.#media = [];
     this.#stream = new Set();
 
@@ -83,3 +84,5 @@ export class Breakpoints {
     this.#stream.forEach(callback => callback(this.current));
   };
 }
+
+export const Breakpoints = new BreakpointsClass(points);

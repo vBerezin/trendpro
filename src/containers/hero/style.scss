@@ -1,0 +1,81 @@
+@import "~styles/variables/fonts.scss";
+
+.hero {
+  padding: 30px 0;
+  min-height: 470px;
+  color: #fff;
+  background-color: #000;
+  background-image: linear-gradient(to bottom, #000, #191919);
+  position: relative;
+}
+.hero__title {
+  font-size: 67px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  text-align: center;
+
+  b,
+  strong {
+    color: #DFFF13;
+  }
+}
+.hero__text {
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+  font-size: 21px;
+  font-weight: $font-weight-regular;
+}
+.hero__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #292929;
+  border-radius: 20px;
+}
+.hero__features__text {
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  margin-bottom: 12px;
+  max-width: 280px;
+
+  b,
+  strong {
+    color: #DFFF13;
+    font-weight: $font-weight-medium;
+  }
+}
+.hero__features__list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.hero__features__item {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+.hero__features__item-icon {
+  color: #4B4B4B;
+  font-size: 20px;
+  margin-right: 8px;
+  flex: 0 0 auto;
+}
+.hero__button {
+  flex: 0 0 auto;
+  min-width: 280px;
+}
+.hero__image {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  text-align: center;
+}

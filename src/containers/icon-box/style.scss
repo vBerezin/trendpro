@@ -2,14 +2,13 @@
   display: inline-block;
   text-align: center;
   position: relative;
-  padding: 0;
+  padding: 5px;
+  background: rgba(#E6E6E6, 0.14);
   color: #383838;
-  background: none;
   line-height: 0;
   border-radius: 16px;
-  border: 5px solid rgba(#E6E6E6, 0.14);
+  border: none;
 }
-
 .icon-box__inner {
   display: flex;
   align-items: center;
@@ -20,13 +19,32 @@
   background: #E6E6E6;
 }
 
-
-.icon-box.icon-box--small {
-  border-width: 3px;
+.icon-box.icon-box--medium {
+  padding: 3px;
 
   .icon-box__inner {
     width: 30px;
     height: 30px;
+  }
+}
+.icon-box.icon-box--small {
+  padding: 3px;
+
+  .icon-box__inner {
+    width: 24px;
+    height: 24px;
+  }
+}
+.icon-box.icon-box--blue {
+  background-color: rgba(#32C5FF, 0.08);
+
+  .icon-box__inner {
+    background-color: #32C5FF;
+  }
+}
+.icon-box.icon-box--shadow-green {
+  .icon-box__inner {
+    box-shadow: 0 12px 18px rgba(202, 231, 19, 0.11);
   }
 }
 .icon-box.icon-box--whatsapp {
@@ -36,10 +54,23 @@
     background-color: #9CD300;
   }
 }
-.icon-box.icon-box--telegram {
+.icon-box.icon-box--telegram,
+.icon-box.icon-box--telegram2 {
   color: #fff;
 
   .icon-box__inner {
-    background-color: #32C5FF;
+    background-color: #1D93D2;
+    background-image: linear-gradient(to bottom, #38B0E3, #1D93D2);
+  }
+}
+.icon-box.icon-box--telegram2 {
+  background-color: rgba(#32C5FF, 0.08);
+}
+.icon-box.icon-box--instagram {
+  color: #fff;
+  background-color: rgba(#DC4367, 0.08);
+
+  .icon-box__inner {
+    background: linear-gradient(345deg, #F0B167 10%, #E4475A 35%, #BE3393 65%, #5955CB 90%);
   }
 }

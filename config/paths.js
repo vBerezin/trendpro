@@ -5,7 +5,7 @@ const path = require('path');
 
 const entries = (() => {
   const entries = {};
-  const files = glob.sync('./src/pages/**/index.{ts,js}');
+  const files = glob.sync('./src/pages/*/index.{ts,js}');
   files.forEach((filePath) => {
     const entryFolder = path.dirname(path.relative('./src/pages', filePath));
     entries[entryFolder] = filePath;
@@ -49,7 +49,7 @@ module.exports = {
   },
   pug: {
     dest: build,
-    src: `${src}/pages/**/*.pug`,
+    src: `${src}/pages/*/*.pug`,
     lint: `${src}/**/*.pug`,
     clean: `${build}/*.html`,
     watch: `${src}/**/*.pug`,

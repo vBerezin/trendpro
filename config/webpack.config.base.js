@@ -24,7 +24,7 @@ module.exports = merge(
     },
     resolve: {
       alias: resolveAlias($.paths.alias),
-      extensions: ['.js', '.scss', '.css'],
+      extensions: ['.js', '.scss', '.css', '.mjs'],
       modules: ['node_modules', $.paths.webpack.context, $.paths.build],
     },
     optimization: {

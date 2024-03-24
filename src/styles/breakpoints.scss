@@ -1,4 +1,4 @@
-@import "~common/styles/variables/layout";
+@import "~styles/variables/layout";
 
 :export {
   xxs: map_get($layout-breakpoints, xxs);
@@ -8,5 +8,4 @@
   lg: map_get($layout-breakpoints, lg);
   xl: map_get($layout-breakpoints, xl);
   xxl: map_get($layout-breakpoints, xxl);
-  large: map_get($layout-breakpoints, large);
 }

@@ -1,3 +1,7 @@
+@import "~styles/mixins/image-cover";
+@import "~styles/variables/transition";
+@import "~styles/variables/fonts.scss";
+
 .section-reviews {
   color: #fff;
   background-color: #333333;
@@ -6,6 +10,7 @@
 .section-reviews__head {
   b,
   strong {
+    font-weight: $font-weight-medium;
     color: #DFFF13;
   }
 }
@@ -13,12 +18,32 @@
   overflow: hidden;
 }
 .section-reviews__slider {
-  margin: 0 -15px;
-  overflow: visible;
+  cursor: all-scroll;
 }
 .section-reviews__slide {
+  padding: 0 15px;
   font-size: 0;
   line-height: 0;
-  width: 160px;
-  padding: 0 15px;
+  transition: transform $transition-time ease-out;
+  transform: scale(0.9);
+
+  &.is-active {
+    transform: scale(1);
+
+    .section-reviews__slide-image {
+      opacity: 1;
+    }
+  }
+}
+.section-reviews__slide-image {
+  padding-top: 175%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.8;
+  transition: opacity $transition-time ease-out;
+
+  img {
+    @include image-cover
+  }
 }

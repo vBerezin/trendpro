@@ -1,0 +1,49 @@
+include ~components/container/mixin
+include ~components/button/mixin
+include ~components/image/mixin
+include ~containers/icon-box/mixin
+
+.hero
+	+container
+		.hero__top
+			h1.hero__title Поможем#{' '}
+				b собрать бизнес
+			.hero__text
+				span с помощью современных IT-решений
+				span и эффективной интернет-рекламы
+		.hero__bottom
+			.hero__features
+				.hero__features__text Давай познакомимся и обсудим на#{' '}
+					b бесплатной консультации
+					|#{' '}твой проект. Ты получишь:
+				.hero__features__list
+					.hero__features__item
+						+icon-box({
+							class: 'hero__features__item-icon',
+							mods: ['blue', 'shadow-green', 'medium'],
+							icon: 'union'
+						})
+						| Лучшие решения#{' '}
+						br
+						|по задачам
+					.hero__features__item
+						+icon-box({
+							class: 'hero__features__item-icon',
+							mods: ['blue', 'shadow-green', 'medium'],
+							icon: 'layers'
+						})
+						| Коммерческое
+						br
+						|предложение
+			.hero__button
+				+button({
+					text: 'ОБСУДИТЬ ПРОЕКТ',
+					mods: ['block', 'large']
+				})
+		.hero__image
+			+image({
+				src: '/images/hero.png',
+				srcset: {
+					'2x': '/images/hero@2x.png'
+				}
+			})

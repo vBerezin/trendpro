@@ -1,0 +1,50 @@
+@import "~styles/variables/fonts";
+@import "~styles/mixins/image-contain";
+
+.section-clients {
+  background-color: #EDEDED;
+  color: #383838;
+}
+.section-clients__head {
+  b,
+  strong {
+    font-weight: $font-weight-medium;
+    color: #32C5FF;
+  }
+}
+.section-clients__body {
+  margin: -20px -20px -20px -10px;
+}
+.section-clients__slider {
+  padding: 20px 20px 20px 10px;
+  cursor: move;
+}
+.section-clients__item {
+  display: block;
+  position: relative;
+  box-shadow: 5px 5px 15px #C7C7C7;
+  padding-top: 100%;
+  background-color: #F1F1F1;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.section-clients__item-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  line-height: 0;
+  padding: 20px;
+}
+.section-clients__footer {
+  margin-top: 50px;
+}
+.section-clients__scrollbar {
+  max-width: 80px;
+  margin: 0 auto;
+}

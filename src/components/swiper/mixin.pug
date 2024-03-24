@@ -1,4 +1,7 @@
 mixin swiper(data)
-	.swiper(class=data.class)&attributes(data.attributes)
+	.swiper(
+		class=data.class
+		class=mods('swiper', data.mods)
+	)&attributes(data.attributes)
 		.swiper-wrapper
 			block
