@@ -2,6 +2,12 @@ import './style.scss'
 import {Swiper,Mousewheel} from '~components/swiper';
 import { Breakpoints } from "~components/breakpoints";
 
+import '~components/section'
+import '~components/section-head'
+import '~components/section-title'
+import '~components/container'
+import '~components/image'
+
 (() => {
   const section = document.querySelector('.js-section-reviews');
   if (!section) {

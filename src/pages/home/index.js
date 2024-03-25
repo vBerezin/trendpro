@@ -1,14 +1,5 @@
 import './style.scss'
 
-import '~components/container'
-import '~components/image'
-import '~components/icon'
-import '~components/button'
-import '~components/input'
-import '~components/section'
-import '~components/section-head'
-import '~components/section-title'
-
 import '~containers/layoutPage'
 import '~containers/header'
 import '~containers/hero'
@@ -19,4 +10,7 @@ import '~containers/section-reviews'
 import '~containers/section-clients'
 import '~containers/section-features'
 import '~containers/section-team'
+import '~containers/section-services'
+import '~containers/section-cases'
 
+import '~scripts/clicks';

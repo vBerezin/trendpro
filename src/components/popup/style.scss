@@ -1,0 +1,101 @@
+@import "~styles/variables/fonts";
+@import "~styles/variables/animation";
+@import "~components/breakpoints/mixin";
+
+@keyframes popup-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup-inner {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup {
+  $z-index: 500;
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index;
+  background: rgba(#000, 0.5);
+  animation: popup-show $animation-time ease-out;
+
+  &.is-active {
+    display: block;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+    animation: popup-inner $animation-time ease-out;
+  }
+  &__body {
+    padding: 20px;
+    border-radius: 10px;
+    background: #F4F4F4;
+    flex: 1 1 auto;
+    overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+  }
+  &__icon,
+  &__close {
+    font-size: 20px;
+    line-height: 0;
+    flex: 0 0 auto;
+  }
+  &__icon {
+    margin-right: 10px;
+  }
+  &__close {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+@include breakpoint(md) {
+  .popup {
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+
+    &__inner {
+      display: block;
+      margin: auto;
+      position: relative;
+      max-height: none;
+      overflow: hidden;
+      width: 260px;
+    }
+    &.is-active {
+      display: flex;
+    }
+  }
+}

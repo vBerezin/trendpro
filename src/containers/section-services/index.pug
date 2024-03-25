@@ -1,0 +1,121 @@
+include ~components/section/mixin
+include ~components/section-head/mixin
+include ~components/section-title/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~containers/service-card/mixin
+include ~containers/popup-sales/mixin
+
+-
+	cards = [
+		{
+			title: 'Интернет-маркетинг',
+			text: 'Запустим рекламную кампанию и приведем новых клиентов в ваш бизнес.',
+			icon: {
+				icon: 'rocket',
+				mods: ['red', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['red', 'small'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:red',
+				}
+			},
+			services: [
+				'/images/logos/yaDirect.png',
+				'/images/logos/googleAds.png',
+				'/images/logos/vk-reklama.png',
+				'/images/logos/instagram.png',
+				'/images/logos/my-target.png',
+				'/images/logos/avito.png',
+				'/images/logos/telegram.svg',
+				'/images/logos/seo.svg',
+			]
+		},
+		{
+			title: 'Упаковка бизнеса',
+			text: 'Придумаем, нарисуем и напишем классные тексты. И для соцсетей тоже!',
+			icon: {
+				icon: 'tools',
+				mods: ['green', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['small', 'green'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:green',
+				}
+			},
+			services: [
+				'/images/service-1.svg',
+				'/images/service-2.svg',
+				'/images/service-3.svg',
+				'/images/service-4.svg',
+				'/images/service-5.svg',
+				'/images/service-6.svg',
+				'/images/service-7.svg',
+				'/images/service-8.svg',
+			]
+		},
+		{
+			title: 'Автоматизация бизнеса',
+			text: 'Наведем порядок и избавим команду от рутинных задач.',
+			icon: {
+				icon: 'automatic',
+				mods: ['blue', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['blue', 'small'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:blue',
+				}
+			},
+			services: [
+				'/images/service-9.svg',
+				'/images/service-10.svg',
+				'/images/service-11.svg',
+				'/images/service-12.svg',
+				'/images/service-13.svg',
+				'/images/service-14.svg',
+				'/images/service-15.svg',
+				'/images/service-16.svg',
+			]
+		},
+	]
+
++section({
+	class: 'section-services'
+})
+	+container
+		+section-head
+			+section-title Наши услуги
+			.section-services__text
+				p Используем связку digital-инструментов#{' '}
+					strong для максимально эффективного продвижения.
+				p Упакуем, настроим и приведем новых клиентов!
+		.section-services__body
+			each card in cards
+				+service-card(card)
+
+each id in ['red', 'green', 'blue']
+	+popup-sales({
+		action: `/api/popup.sales:${id}.html`,
+		title: 'Оставить заявку',
+		text: 'Заполните форму и мы свяжемся с вами в течение 5 минут',
+		icon: {
+			icon: 'sale',
+			mods: [id, 'shadow', 'icon-white']
+		},
+		attributes: {
+			id: `popup.sales:${id}`
+		},
+		button: {
+			text: 'ОСТАВИТЬ ЗАЯВКУ',
+			mods: [id]
+		}
+	})

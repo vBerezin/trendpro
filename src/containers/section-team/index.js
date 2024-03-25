@@ -2,6 +2,13 @@ import './style.scss';
 
 import './style.scss'
 import {Swiper, EffectCreative} from '~components/swiper';
+import '~components/section'
+import '~components/section-head'
+import '~components/section-title'
+import '~components/container'
+import '~components/image'
+import '~components/icon'
+import '~containers/icon-box'
 
 (() => {
   const section = document.querySelector('.js-section-team');

@@ -1,15 +1,13 @@
-import { Popup } from '~blocks/popup';
-import { Handlers } from '~common/scripts/utils/handlers';
+import { Popup } from '~components/popup';
+import { Handlers } from '~scripts/utils/Handlers';
 
 const popups = new WeakMap();
 const actions = {
   'popup': ({ event, target }) => {
     const { popupId } = target.dataset;
-    target.disabled = true;
-    target.classList.add('is-disabled');
-    event.preventDefault();
     const node = document.getElementById(popupId);
     if (node) {
+      event.preventDefault();
       let popup = popups.get(node);
       if (!popup) {
         popup = new Popup(node);
@@ -17,11 +15,7 @@ const actions = {
       }
       popup.open();
     }
-    target.disabled = false;
-    target.classList.remove('is-disabled');
   },
 };
 
 document.addEventListener('click', new Handlers.Click(actions));
-
-export const Popups = { popups };

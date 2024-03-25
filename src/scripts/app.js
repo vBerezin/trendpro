@@ -1,4 +1,4 @@
-import { Stream } from '~scripts/utils/stream';
+import { Stream } from '~scripts/utils/Stream';
 
 const App = (function () {
   const debug = console.info;

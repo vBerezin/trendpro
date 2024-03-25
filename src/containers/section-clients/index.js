@@ -4,6 +4,12 @@ import './style.scss'
 import {Swiper, Mousewheel, Grid} from '~components/swiper';
 import {Scrollbar} from '~components/swiper-scrollbar';
 
+import '~components/section'
+import '~components/section-head'
+import '~components/section-title'
+import '~components/container'
+import '~components/image'
+
 (() => {
   const section = document.querySelector('.js-section-clients');
   if (!section) {

@@ -20,7 +20,7 @@ include ~containers/icon-box/mixin
 					.hero__features__item
 						+icon-box({
 							class: 'hero__features__item-icon',
-							mods: ['blue', 'shadow-green', 'medium'],
+							mods: ['blue', 'shadow', 'medium'],
 							icon: 'union'
 						})
 						| Лучшие решения#{' '}
@@ -29,7 +29,7 @@ include ~containers/icon-box/mixin
 					.hero__features__item
 						+icon-box({
 							class: 'hero__features__item-icon',
-							mods: ['blue', 'shadow-green', 'medium'],
+							mods: ['blue', 'shadow', 'medium'],
 							icon: 'layers'
 						})
 						| Коммерческое
@@ -38,7 +38,10 @@ include ~containers/icon-box/mixin
 			.hero__button
 				+button({
 					text: 'ОБСУДИТЬ ПРОЕКТ',
-					mods: ['block', 'large']
+					mods: ['block', 'large'],
+					attributes: {
+						href: '#feedback'
+					}
 				})
 		.hero__image
 			+image({

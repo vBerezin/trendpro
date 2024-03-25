@@ -14,4 +14,4 @@
   forms.forEach((form) => {
     form.addEventListener('submit', handler);
   });
-})()
+})();

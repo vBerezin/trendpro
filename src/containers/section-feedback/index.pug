@@ -7,6 +7,7 @@ include ~components/input/mixin
 
 +section({
 	class: 'section-feedback',
+	id: 'feedback'
 })
 	+container
 		.section-feedback__inner
@@ -18,6 +19,7 @@ include ~components/input/mixin
 					.section-feedback__text Оставьте заявку и мы свяжемся с вами в течение 5 минут
 					.section-feedback__field
 						+input({
+							mods: ['white'],
 							attributes: {
 								type: 'text',
 								placeholder: 'Ваше имя',
@@ -26,6 +28,7 @@ include ~components/input/mixin
 						})
 					.section-feedback__field
 						+input({
+							mods: ['white'],
 							attributes: {
 								type: 'text',
 								placeholder: '+7 (000) 000-00-00',

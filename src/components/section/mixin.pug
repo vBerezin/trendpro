@@ -2,6 +2,7 @@ mixin section(data)
 	-
 		data = data || {};
 	section.section(
+		id=data.id
 		class=data.class
 		class=mods('section', data.mods)
 	)&attributes(data.attributes)

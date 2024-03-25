@@ -36,7 +36,7 @@ module.exports = {
     context: src,
     entries: {
       ...entries,
-      dev: `${src}/scripts/dev.js`
+      dev: `${src}/scripts/dev/index.js`
     },
     dest: build,
   },
