@@ -3,6 +3,7 @@ include ~components/section-head/mixin
 include ~components/section-title/mixin
 include ~components/container/mixin
 include ~components/image/mixin
+include ~components/picture/mixin
 include ~components/button/mixin
 
 -
@@ -13,7 +14,30 @@ include ~components/button/mixin
 			text: 'Запустили динамические объявления на поиске и за два месяца увеличили прибыль с рекламной кампании на 46%',
 			button: 'ВСЕ КЕЙСЫ ПО ИНТЕРНЕТ-МАРКЕТИНГУ',
 			logo: '/images/logos/fabrica-resheniy.svg',
-			image: '/images/case-1.png'
+			picture: {
+				src: '/images/case-1.png',
+				srcset: {
+					'2x': '/images/case-1@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-1-desktop.png',
+						srcset: {
+							'2x': '/images/case-1-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 768px)',
+						src: '/images/case-1-tablet.png',
+						srcset: {
+							'2x': '/images/case-1-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
 		},
 		{
 			title: 'Онлайн<br>магазин',
@@ -21,7 +45,30 @@ include ~components/button/mixin
 			text: 'Разработали дизайн индексной страницы для онлайн-магазина брендовой одежды. Адаптация сайта под любые устройства.',
 			button: 'ВСЕ КЕЙСЫ ПО УПАКОВКЕ БИЗНЕСА',
 			logo: '/images/logos/lux.png',
-			image: '/images/case-2.png'
+			picture: {
+				src: '/images/case-2.png',
+				srcset: {
+					'2x': '/images/case-2@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-2-desktop.png',
+						srcset: {
+							'2x': '/images/case-2-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 768px)',
+						src: '/images/case-2-tablet.png',
+						srcset: {
+							'2x': '/images/case-2-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
 		},
 		{
 			title: 'Логистическая<br>компания',
@@ -29,7 +76,30 @@ include ~components/button/mixin
 			text: 'Внедрили сквозную аналитику Roistat.',
 			button: 'ВСЕ КЕЙСЫ ПО АВТОМАТИЗАЦИИ БИЗНЕСА',
 			logo: '/images/logos/transitplus.png',
-			image: '/images/case-3.png'
+			picture: {
+				src: '/images/case-3.png',
+				srcset: {
+					'2x': '/images/case-3@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-3-desktop.png',
+						srcset: {
+							'2x': '/images/case-3-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 768px)',
+						src: '/images/case-3-tablet.png',
+						srcset: {
+							'2x': '/images/case-3-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
 		},
 	]
 
@@ -51,9 +121,7 @@ include ~components/button/mixin
 							h4.section-cases__item-title !{item.title}
 							.section-cases__item-label #{item.label}
 							.section-cases__item-image
-								+image({
-									src: item.image
-								})
+								+picture(item.picture)
 						.section-cases__item-body #{item.text}
 						a(href="#").section-cases__item-link Подробнее о кейсе
 					+button({

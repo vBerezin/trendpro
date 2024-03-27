@@ -53,9 +53,9 @@
 
 @include breakpoint(sm) {
   .button.button--small {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
-    padding: 20px;
+    padding: 20px 10px;
   }
 }
 @include breakpoint(lg) {

@@ -58,6 +58,11 @@
   height: 100%;
   font-size: 0;
   line-height: 0;
+
+  img {
+    max-width: 80%;
+    max-height: 80%;
+  }
 }
 .service-card__button {
   box-shadow: -5px -5px 24px #FFFFFF, 5px 5px 18px #C7C7C7;

@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin";
 @import "~styles/variables/fonts";
 
 .section-cases {
@@ -5,35 +6,26 @@
   background-color: #404040;
   background-image: linear-gradient(to bottom, #404040 , #222222 60%);
 }
-.section-cases__body {
-  display: grid;
-  grid-gap: 45px;
-  grid-template-columns: repeat(3, 1fr);
-}
 .section-cases__col {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 .section-cases__item {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
   color: #030303;
   border-radius: 10px;
   background-color: #F4F4F4;
   z-index: 10;
   overflow: hidden;
-  flex: 1 0 auto;
 }
 .section-cases__item-head {
-  background-color: #ECEAE6;
+  padding: 14px;
+  background-color: #f0efec;
   border-radius: inherit;
   position: relative;
   box-shadow: 5px 5px 18px #C7C7C7;
-  padding: 14px;
   z-index: inherit;
   overflow: hidden;
 }
@@ -68,9 +60,15 @@
   font-size: 0;
   line-height: 0;
   right: 0;
+  top: 0;
   bottom: 0;
   overflow: hidden;
+  max-height: 100%;
   z-index: -1;
+
+  img {
+    max-height: 100%;
+  }
 }
 .section-cases__item-body {
   flex: 1 0 auto;
@@ -90,4 +88,52 @@
 }
 .section-cases__item-button {
   margin-top: 14px;
+}
+
+
+@include breakpoint(sm) {
+  .section-cases__item-head {
+    padding: 30px;
+  }
+  .section-cases__item-title {
+    font-size: 28px;
+  }
+  .section-cases__item-button {
+    max-width: 380px;
+    margin: 20px auto 0 auto;
+  }
+}
+@include breakpoint(md) {
+  .section-cases__body {
+    display: grid;
+    grid-gap: 45px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .section-cases__item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex: 1 0 auto;
+  }
+  .section-cases__col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  .section-cases__item-head {
+    padding: 14px;
+  }
+  .section-cases__item-title {
+    font-size: 22px;
+  }
+  .section-cases__item-button {
+    max-width: none;
+    margin: 14px 0 0 0;
+  }
+  .section-cases__item-image {
+    top: auto;
+  }
 }
