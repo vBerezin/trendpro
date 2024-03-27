@@ -7,6 +7,7 @@ import '~components/section-head'
 import '~components/section-title'
 import '~components/container'
 import '~components/image'
+import '~components/picture'
 import '~components/icon'
 import '~containers/icon-box'
 

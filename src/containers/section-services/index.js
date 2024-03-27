@@ -18,6 +18,7 @@ import {Breakpoints} from "~components/breakpoints";
     return false;
   }
   const tabs = section.querySelectorAll('[data-tab]');
+  const container = section.querySelector('.section-services__grid');
 
   function setActive(id) {
     tabs.forEach((el) => {
@@ -39,6 +40,15 @@ import {Breakpoints} from "~components/breakpoints";
     },
     () => {
       section.removeEventListener('click', handleClick);
+    }
+  );
+  Breakpoints.once(
+    ['md'],
+    () => {
+      container.classList.add('container--justify');
+    },
+    () => {
+      container.classList.remove('container--justify');
     }
   )
 

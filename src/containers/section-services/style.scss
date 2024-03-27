@@ -70,7 +70,6 @@
 .section-services__grid-item {
   display: none;
 }
-
 .section-services__grid-item.is-active {
   display: block;
   animation: show $animation-time ease-out;

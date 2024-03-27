@@ -5,6 +5,10 @@
   max-width: 100%;
 }
 
+.container.container--justify {
+  width: auto;
+}
+
 @include breakpoint(sm) {
   .container {
     padding: 0 40px;
