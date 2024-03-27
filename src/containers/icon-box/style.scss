@@ -1,3 +1,5 @@
+@import "~components/breakpoints/mixin.scss";
+
 .icon-box {
   display: inline-block;
   text-align: center;
@@ -70,7 +72,6 @@
     box-shadow: 0 18px 27px rgba(#B9D700, 0.15);
   }
 }
-
 .icon-box.icon-box--whatsapp {
   color: #fff;
 

@@ -3,6 +3,8 @@ include ~components/section-head/mixin
 include ~components/section-title/mixin
 include ~components/container/mixin
 include ~components/image/mixin
+include ~components/swiper/mixin
+include ~components/swiper-slide/mixin
 include ~containers/service-card/mixin
 include ~containers/popup-sales/mixin
 
@@ -24,15 +26,50 @@ include ~containers/popup-sales/mixin
 				}
 			},
 			services: [
-				'/images/logos/yaDirect.png',
-				'/images/logos/googleAds.png',
-				'/images/logos/vk-reklama.png',
-				'/images/logos/instagram.png',
-				'/images/logos/my-target.png',
-				'/images/logos/avito.png',
-				'/images/logos/telegram.svg',
-				'/images/logos/seo.svg',
-			]
+				{
+					"src": "/images/logos/yaDirect.png",
+					"srcset": {
+						"2x": "/images/logos/yaDirect@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/googleAds.png",
+					"srcset": {
+						"2x": "/images/logos/googleAds@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/vk-reklama.png",
+					"srcset": {
+						"2x": "/images/logos/vk-reklama@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/instagram.png",
+					"srcset": {
+						"2x": "/images/logos/instagram@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/my-target.png",
+					"srcset": {
+						"2x": "/images/logos/my-target@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/avito.png",
+					"srcset": {
+						"2x": "/images/logos/avito@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/telegram.svg",
+				},
+				{
+					"src": "/images/logos/seo.svg",
+				}
+			],
+			mod: 'red'
 		},
 		{
 			title: 'Упаковка бизнеса',
@@ -58,7 +95,8 @@ include ~containers/popup-sales/mixin
 				'/images/service-6.svg',
 				'/images/service-7.svg',
 				'/images/service-8.svg',
-			]
+			].map((item) => ({ src: item })),
+			mod: 'green'
 		},
 		{
 			title: 'Автоматизация бизнеса',
@@ -84,12 +122,13 @@ include ~containers/popup-sales/mixin
 				'/images/service-14.svg',
 				'/images/service-15.svg',
 				'/images/service-16.svg',
-			]
+			].map((item) => ({ src: item })),
+			mod: 'blue'
 		},
 	]
 
 +section({
-	class: 'section-services'
+	class: ['section-services', 'js-section-services']
 })
 	+container
 		+section-head
@@ -98,9 +137,33 @@ include ~containers/popup-sales/mixin
 				p Используем связку digital-инструментов#{' '}
 					strong для максимально эффективного продвижения.
 				p Упакуем, настроим и приведем новых клиентов!
-		.section-services__body
-			each card in cards
-				+service-card(card)
+			nav.section-services__nav
+				ul.section-services__nav-list
+					each card, index in cards
+						li
+							button(
+								class=[
+									`section-services__tab-${card.mod}`,
+									'section-services__tab',
+									index === 0 ? 'is-active' : ''
+								]
+								data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+								data-click="tab"
+								) #{card.title}
+	.section-services__body
+		+container({
+			class: 'section-services__grid'
+		})
+			each card, index in cards
+				.section-services__grid-item(
+					class=(index === 0 ? 'is-active' : '')
+					data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+				)
+					+service-card(card)
+		.section-services__swipe
+			+image({
+				src: '/images/swipe.gif'
+			})
 
 each id in ['red', 'green', 'blue']
 	+popup-sales({

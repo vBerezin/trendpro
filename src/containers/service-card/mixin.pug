@@ -18,9 +18,7 @@ mixin service-card(data)
 			each service in data.services
 				.service-card__service
 					.service-card__service-image
-						+image({
-							src: service
-						})
+						+image(service)
 			+button({
 				class: 'service-card__button',
 				text: data.button.text,

@@ -4,7 +4,7 @@ mixin image(data)
 		srcset = []
 		for (const key in data.srcset) {
 			srcset.push(`${data.srcset[key]} ${key}`);
-		};
+		}
 		srcset = srcset.join(',');
 	img(
 		class=data.class

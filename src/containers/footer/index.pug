@@ -4,15 +4,19 @@ include ~containers/icon-box/mixin
 
 -
 	footerMenu = [
-		'Упаковка бизнеса',
-		'Бесплатный аудит',
-		'Интернет - маркетинг',
-		'Отзывы',
-		'Автоматизация бизнеса',
-		'Кейсы',
+		[
+			'Упаковка бизнеса',
+			'Бесплатный аудит',
+			'Интернет - маркетинг',
+		],
+		[
+			'Отзывы',
+			'Автоматизация бизнеса',
+			'Кейсы',
+		]
 	]
 
-footer.footer
+footer.footer.js-footer
 	+container
 		.footer__inner
 			.footer__top
@@ -21,17 +25,20 @@ footer.footer
 				.footer__copyright 2013-2023 ООО «TREND PRO»  Все права защищены
 			.footer__middle
 				nav.footer__nav
-					ul.footer__nav-list
-						each item in footerMenu
-							li.footer__nav-listItem
-								a(href='#').footer__nav-link #{item}
+					each col in footerMenu
+						ul.footer__nav-list
+							each item in col
+								li
+									a(href='#').footer__nav-link #{item}
 			.footer__bottom
-				ul.footer__contacts-list
-					li.footer__contacts-listItem
-						a(href="tel:+78003018287").footer__contacts-link 8 800 301 82 87
-					li.footer__contacts-listItem
-						a(href="mailto:info@trend-p.ru").footer__contacts-link info@trend-p.ru
-					ul.footer__social
+				.footer__contacts
+					ul.footer__contacts-list
+						li
+							a(href="tel:+78003018287").footer__contacts-link 8 800 301 82 87
+						li
+							a(href="mailto:info@trend-p.ru").footer__contacts-link info@trend-p.ru
+				.footer__social
+					ul.footer__social-list
 						li
 							+icon-box({
 								icon: 'whatsapp',

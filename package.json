@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "build-prod": "gulp build --prod",
+    "build:prod": "gulp build --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

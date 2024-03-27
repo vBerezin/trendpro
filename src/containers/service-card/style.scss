@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin";
 @import "~styles/variables/fonts";
 
 .service-card {
@@ -6,9 +7,9 @@
   align-items: stretch;
   justify-content: flex-start;
   border-radius: 10px;
-  padding: 30px 20px;
   background-color: #F4F4F4;
   color: #383838;
+  padding: 30px 20px;
 }
 .service-card__head {
   display: flex;
@@ -60,4 +61,47 @@
 }
 .service-card__button {
   box-shadow: -5px -5px 24px #FFFFFF, 5px 5px 18px #C7C7C7;
+}
+
+@include breakpoint(sm) {
+  .service-card {
+    padding: 30px;
+  }
+  .service-card__title {
+    font-size: 24px;
+  }
+  .service-card__text {
+    font-size: 16px;
+  }
+  .service-card__body {
+    margin-top: 30px;
+    grid-gap: 20px;
+  }
+  .service-card__service-image {
+    img {
+      min-height: 80px;
+    }
+  }
+}
+@include breakpoint(md) {
+  .service-card {
+    padding: 30px 20px;
+  }
+  .service-card__title {
+    font-size: 16px;
+  }
+  .service-card__text {
+    font-size: 12px;
+  }
+  .service-card__body {
+    margin-top: 20px;
+    grid-gap: 15px;
+  }
+  .service-card__service-image {
+    img {
+      min-height: auto;
+      max-height: 80%;
+      max-width: 80%;
+    }
+  }
 }

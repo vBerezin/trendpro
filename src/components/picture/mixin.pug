@@ -1,0 +1,17 @@
+include ~components/image/mixin
+
+mixin picture(data)
+	- data = data || {}
+	picture.picture
+		if (data.source)
+			each source in data.source
+				source(
+					srcset=Object.entries(source.srcset).map(([x, src]) => `${src} ${x}`).join(',')
+					media=source.media
+					type=source.type)
+		+image({
+			class: data.class,
+			src: data.src,
+			srcset: data.srcset,
+			attributes: data.attributes
+		})
