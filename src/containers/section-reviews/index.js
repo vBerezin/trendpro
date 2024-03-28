@@ -16,10 +16,11 @@ import '~components/image'
   const slider = section.querySelector('[data-ref="slider"]');
 
   return new Swiper(slider, {
-    slidesPerView: 3,
     mousewheel: true,
     modules: [Mousewheel],
-    loop: true,
+    loop: false,
+    slidesPerView: 'auto',
+    centeredSlides: true,
     on: {
       activeIndexChange(swiper) {
         const {realIndex: currentIndex, params: {slidesPerView}, slides} = swiper;
@@ -42,14 +43,15 @@ import '~components/image'
     },
     breakpoints: {
       [Breakpoints.points.sm]: {
-        slidesPerView: 4,
+        slidesPerView: 2,
+        centeredSlides: false,
+        loop: false,
       },
-      [Breakpoints.points.lg]: {
+      [Breakpoints.points.md]: {
         slidesPerView: 7,
+        centeredSlides: false,
+        loop: true,
       },
-      [Breakpoints.points.xl]: {
-        slidesPerView: 8,
-      }
     }
   });
 })()
