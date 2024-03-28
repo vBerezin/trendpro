@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin";
 @import "~styles/variables/fonts";
 @import "~styles/variables/animation";
 @import "~components/breakpoints/mixin";
@@ -24,9 +25,13 @@
 
 .popup {
   $z-index: 500;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   display: none;
   position: fixed;
-  overflow: hidden;
   left: 0;
   top: 0;
   right: 0;
@@ -36,7 +41,7 @@
   animation: popup-show $animation-time ease-out;
 
   &.is-active {
-    display: block;
+    display: flex;
   }
 
   &__inner {
@@ -44,12 +49,11 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     max-height: 100%;
     animation: popup-inner $animation-time ease-out;
+    margin: auto;
+    overflow: hidden;
+    width: 260px;
   }
   &__body {
     padding: 20px;
@@ -78,24 +82,19 @@
   }
 }
 
+@include breakpoint(sm) {
+  .popup__inner {
+    width: 320px;
+  }
+  .popup__body {
+    padding: 30px;
+  }
+}
 @include breakpoint(md) {
-  .popup {
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
-    overflow-scrolling: touch;
-    -webkit-overflow-scrolling: touch;
-
-    &__inner {
-      display: block;
-      margin: auto;
-      position: relative;
-      max-height: none;
-      overflow: hidden;
-      width: 260px;
-    }
-    &.is-active {
-      display: flex;
-    }
+  .popup__inner {
+    width: 260px;
+  }
+  .popup__body {
+    padding: 20px;
   }
 }

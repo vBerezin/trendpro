@@ -6,6 +6,7 @@ include ~components/image/mixin
 include ~components/swiper/mixin
 include ~components/swiper-slide/mixin
 include ~components/swiper-scrollbar/mixin
+include ~components/swiper-pagination/mixin
 
 -
 	items = [
@@ -52,6 +53,12 @@ include ~components/swiper-scrollbar/mixin
 									src: item
 								})
 		.section-clients__footer
+			+swiper-pagination({
+				class: 'section-clients__pagination',
+				attributes: {
+					'data-ref': 'pagination'
+				}
+			})
 			+swiper-scrollbar({
 				class: 'section-clients__scrollbar',
 				attributes: {

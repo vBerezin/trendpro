@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin";
 @import "~styles/variables/fonts.scss";
 
 .popup-sales {
@@ -60,5 +61,51 @@
 .popup-sales__success.popup-sales__success--blue {
   .popup-sales__success-link {
     color: #32C5FF;
+  }
+}
+
+@include breakpoint(sm) {
+  .popup-sales__title {
+    font-size: 24px;
+  }
+  .popup-sales__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .popup-sales__head {
+    margin-bottom: 30px;
+  }
+  .popup-sales__field {
+    margin-bottom: 20px;
+  }
+  .popup-sales__success {
+    font-size: 16px;
+  }
+  .popup-sales__success-title {
+    font-size: 20px;
+  }
+  .popup-sales__success-link {
+    font-size: 16px;
+  }
+}
+@include breakpoint(md) {
+  .popup-sales__success {
+    font-size: 12px;
+  }
+  .popup-sales__success-link {
+    font-size: 14px;
+  }
+  .popup-sales__title {
+    font-size: 20px;
+  }
+  .popup-sales__text {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .popup-sales__head {
+    margin-bottom: 10px;
+  }
+  .popup-sales__field {
+    margin-bottom: 10px;
   }
 }
