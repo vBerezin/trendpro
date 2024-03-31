@@ -1,0 +1,25 @@
+@import "~swiper/modules/scrollbar.css";
+
+.swiperScrollbar {
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: relative;
+  height: 12px;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  background-color: #CFCFCF;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(111, 111, 111, 0.25);
+}
+.swiper-scrollbar-drag {
+  background-color: #32C5FF;
+  cursor: move;
+  box-shadow: inset 0 4px 4px rgba(#fff, 0.25);
+  border-radius: 10px;
+}

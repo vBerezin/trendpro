@@ -11,10 +11,12 @@ html(lang='ru')
 			include ~templates/meta
 			include ~templates/favicon
 			block stylesheets
+				link(rel="stylesheet" href=`/common/index.css?${$.version}`)
 				link(rel="stylesheet" href=`index.css?${$.version}`)
 	body
 		block body
 		include ~templates/sprite
 		block scripts
+			script(src=`/common/index.js?${$.version}`)
 			script(src=`index.js?${$.version}`)
 			script(src=`/dev/index.js?${$.version}`)

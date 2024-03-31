@@ -1,0 +1,15 @@
+include ~components/icon/mixin
+
+mixin breadcrumbs(data)
+	nav.breadcrumbs(
+		class=data.class
+		class=mods('breadcrumbs', data.mods)
+	)&attributes(data.attributes)
+		each item, index in data.items
+			-
+				isLast = index === data.items.length - 1
+				tagName =  isLast ? 'div' : 'a'
+			#{tagName}.breadcrumbs__item(href=(isLast ? undefined : '#')) #{item}
+			if (!isLast)
+				.breadcrumbs__icon
+					+icon('right')

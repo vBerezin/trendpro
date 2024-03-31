@@ -1,0 +1,104 @@
+@import "~components/breakpoints/mixin.scss";
+
+.iconBox {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding: 5px;
+  background: rgba(#E6E6E6, 0.14);
+  color: #383838;
+  line-height: 0;
+  border-radius: 22px;
+  border: none;
+}
+.iconBox__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  width: 38px;
+  height: 38px;
+  background: #E6E6E6;
+}
+.iconBox.iconBox--medium {
+  padding: 3px;
+
+  .iconBox__inner {
+    width: 30px;
+    height: 30px;
+  }
+}
+.iconBox.iconBox--small {
+  padding: 3px;
+
+  .iconBox__inner {
+    width: 24px;
+    height: 24px;
+  }
+}
+.iconBox.iconBox--blue {
+  background-color: rgba(#32C5FF, 0.08);
+
+  .iconBox__inner {
+    background-color: #32C5FF;
+  }
+}
+.iconBox.iconBox--red {
+  background-color: rgba(#FF1422, 0.08);
+
+  .iconBox__inner {
+    background-color: #FF1422;
+  }
+}
+.iconBox.iconBox--green {
+  background-color: rgba(#B9D700, 0.08);
+
+  .iconBox__inner {
+    background-color: #B9D700;
+  }
+}
+.iconBox.iconBox--blue.iconBox--shadow {
+  .iconBox__inner {
+    box-shadow: 0 18px 27px rgba(#32C5FF, 0.15);
+  }
+}
+.iconBox.iconBox--red.iconBox--shadow {
+  .iconBox__inner {
+    box-shadow: 0 18px 27px rgba(#FF1422, 0.11);
+  }
+}
+.iconBox.iconBox--green.iconBox--shadow {
+  .iconBox__inner {
+    box-shadow: 0 18px 27px rgba(#B9D700, 0.15);
+  }
+}
+.iconBox.iconBox--whatsapp {
+  color: #fff;
+
+  .iconBox__inner {
+    background-color: #9CD300;
+  }
+}
+.iconBox.iconBox--telegram,
+.iconBox.iconBox--telegram2 {
+  color: #fff;
+
+  .iconBox__inner {
+    background-color: #1D93D2;
+    background-image: linear-gradient(to bottom, #38B0E3, #1D93D2);
+  }
+}
+.iconBox.iconBox--telegram2 {
+  background-color: rgba(#32C5FF, 0.08);
+}
+.iconBox.iconBox--instagram {
+  color: #fff;
+  background-color: rgba(#DC4367, 0.08);
+
+  .iconBox__inner {
+    background: linear-gradient(345deg, #F0B167 10%, #E4475A 35%, #BE3393 65%, #5955CB 90%);
+  }
+}
+.iconBox.iconBox--icon-white {
+  color: #fff;
+}

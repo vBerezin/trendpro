@@ -29,6 +29,11 @@ module.exports = merge(
     },
     optimization: {
       namedChunks: true,
+      splitChunks: {
+        name: 'common',
+        chunks: 'all',
+        minChunks: 2,
+      }
     },
     plugins: [
       new webpack.ProvidePlugin({

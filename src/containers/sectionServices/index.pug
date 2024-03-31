@@ -1,0 +1,184 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/swiper/mixin
+include ~components/swiperSlide/mixin
+include ~containers/serviceCard/mixin
+include ~containers/popupSales/mixin
+
+-
+	cards = [
+		{
+			title: 'Интернет-маркетинг',
+			text: 'Запустим рекламную кампанию и приведем новых клиентов в ваш бизнес.',
+			icon: {
+				icon: 'rocket',
+				mods: ['red', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['red', 'small'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:red',
+				}
+			},
+			services: [
+				{
+					"src": "/images/logos/yaDirect.png",
+					"srcset": {
+						"2x": "/images/logos/yaDirect@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/googleAds.png",
+					"srcset": {
+						"2x": "/images/logos/googleAds@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/vk-reklama.png",
+					"srcset": {
+						"2x": "/images/logos/vk-reklama@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/instagram.png",
+					"srcset": {
+						"2x": "/images/logos/instagram@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/my-target.png",
+					"srcset": {
+						"2x": "/images/logos/my-target@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/avito.png",
+					"srcset": {
+						"2x": "/images/logos/avito@2x.png"
+					}
+				},
+				{
+					"src": "/images/logos/telegram.svg",
+				},
+				{
+					"src": "/images/logos/seo.svg",
+				}
+			],
+			mod: 'red'
+		},
+		{
+			title: 'Упаковка бизнеса',
+			text: 'Придумаем, нарисуем и напишем классные тексты. И для соцсетей тоже!',
+			icon: {
+				icon: 'tools',
+				mods: ['green', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['small', 'green'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:green',
+				}
+			},
+			services: [
+				'/images/service-1.svg',
+				'/images/service-2.svg',
+				'/images/service-3.svg',
+				'/images/service-4.svg',
+				'/images/service-5.svg',
+				'/images/service-6.svg',
+				'/images/service-7.svg',
+				'/images/service-8.svg',
+			].map((item) => ({ src: item })),
+			mod: 'green'
+		},
+		{
+			title: 'Автоматизация бизнеса',
+			text: 'Наведем порядок и избавим команду от рутинных задач.',
+			icon: {
+				icon: 'automatic',
+				mods: ['blue', 'icon-white', 'shadow']
+			},
+			button: {
+				text: 'Оставить заявку',
+				mods: ['blue', 'small'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup.sales:blue',
+				}
+			},
+			services: [
+				'/images/service-9.svg',
+				'/images/service-10.svg',
+				'/images/service-11.svg',
+				'/images/service-12.svg',
+				'/images/service-13.svg',
+				'/images/service-14.svg',
+				'/images/service-15.svg',
+				'/images/service-16.svg',
+			].map((item) => ({ src: item })),
+			mod: 'blue'
+		},
+	]
+
++section({
+	class: ['sectionServices', 'js-sectionServices']
+})
+	+container
+		+sectionHead
+			+sectionTitle Наши услуги
+			.sectionServices__text
+				p Используем связку digital-инструментов#{' '}
+					strong для максимально эффективного продвижения.
+				p Упакуем, настроим и приведем новых клиентов!
+			nav.sectionServices__nav
+				ul.sectionServices__nav-list
+					each card, index in cards
+						li
+							button(
+								class=[
+									`sectionServices__tab-${card.mod}`,
+									'sectionServices__tab',
+									index === 0 ? 'is-active' : ''
+								]
+								data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+								data-click="tab"
+								) #{card.title}
+	.sectionServices__body
+		+container({
+			class: 'sectionServices__grid'
+		})
+			each card, index in cards
+				.sectionServices__grid-item(
+					class=(index === 0 ? 'is-active' : '')
+					data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+				)
+					+serviceCard(card)
+		.sectionServices__swipe
+			+image({
+				src: '/images/swipe.gif'
+			})
+
+each id in ['red', 'green', 'blue']
+	+popupSales({
+		action: `/api/popup.sales:${id}.html`,
+		title: 'Оставить заявку',
+		text: 'Заполните форму и мы свяжемся с вами в течение 5 минут',
+		icon: {
+			icon: 'sale',
+			mods: [id, 'shadow', 'icon-white']
+		},
+		attributes: {
+			id: `popup.sales:${id}`
+		},
+		button: {
+			text: 'ОСТАВИТЬ ЗАЯВКУ',
+			mods: [id]
+		}
+	})

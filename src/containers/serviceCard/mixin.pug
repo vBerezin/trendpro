@@ -1,0 +1,27 @@
+include ~components/button/mixin
+include ~containers/iconBox/mixin
+
+mixin serviceCard(data)
+	-
+		data = data || {};
+	article.serviceCard(
+		class=data.class
+		class=mods('serviceCard', data.mods)
+	)&attributes(data.attributes)
+		.serviceCard__head
+			.serviceCard__heading
+				h4.serviceCard__title #{data.title}
+				.serviceCard__text #{data.text}
+			.serviceCard__icon
+				+iconBox(data.icon)
+		.serviceCard__body
+			each service in data.services
+				.serviceCard__service
+					.serviceCard__service-image
+						+image(service)
+			+button({
+				class: 'serviceCard__button',
+				text: data.button.text,
+				mods: data.button.mods,
+				attributes: data.button.attributes
+			})

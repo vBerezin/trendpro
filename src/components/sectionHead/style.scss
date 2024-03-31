@@ -1,0 +1,23 @@
+@import "~components/breakpoints/mixin.scss";
+
+.sectionHead {
+  font-size: 12px;
+  margin-bottom: 30px;
+
+  p {
+    margin: 0;
+  }
+}
+
+@include breakpoint(sm) {
+  .sectionHead {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+}
+
+@include breakpoint(md) {
+  .sectionHead {
+    font-size: 14px;
+  }
+}

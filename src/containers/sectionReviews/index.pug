@@ -1,0 +1,36 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/swiper/mixin
+include ~components/swiperSlide/mixin
+
++section({
+	class: ['sectionReviews', 'js-sectionReviews']
+})
+	+sectionHead({
+		class: 'sectionReviews__head'
+	})
+		+container
+			+sectionTitle Отзывы
+			p
+				b Нам доверяют
+				|#{' '}крупные компании
+				br
+				|#{' '}и успешные предприниматели.
+	.sectionReviews__body
+		+swiper({
+			class: 'sectionReviews__slider',
+			attributes: {
+				'data-ref': 'slider'
+			}
+		})
+			each item in Array(15)
+				+swiperSlide({
+					class: 'sectionReviews__slide'
+				})
+					.sectionReviews__slide-image
+						+image({
+							src: '/images/temp/review.png'
+						})

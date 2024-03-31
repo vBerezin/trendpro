@@ -1,0 +1,89 @@
+@import "~components/breakpoints/mixin";
+@import "~styles/mixins/image-cover";
+@import "~styles/variables/transition";
+@import "~styles/variables/fonts.scss";
+
+.sectionReviews {
+  color: #fff;
+  background-color: #333333;
+  background-image: linear-gradient(to bottom, #333333, #2B2B2B);
+}
+.sectionReviews__head {
+  b,
+  strong {
+    font-weight: $font-weight-medium;
+    color: #DFFF13;
+  }
+}
+.sectionReviews__body {
+  overflow: hidden;
+}
+.sectionReviews__slider {
+  cursor: all-scroll;
+}
+.sectionReviews__slide {
+  font-size: 0;
+  line-height: 0;
+}
+.sectionReviews__slide-image {
+  padding-top: 175%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.8;
+  transform: scale(0.85);
+  transition:
+    opacity $transition-time ease-out,
+    transform $transition-time ease-out;
+
+  img {
+    @include image-cover
+  }
+}
+
+.swiperSlide.sectionReviews__slide {
+  width: 160px;
+}
+
+.swiperSlide.is-active,
+.swiperSlide-active {
+  .sectionReviews__slide-image {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@include breakpoint(sm) {
+  .swiperSlide.sectionReviews__slide {
+    padding: 0 15px;
+  }
+  .sectionReviews__body {
+    .swiper {
+      overflow: visible;
+      max-width: 260px * 2;
+      margin: 0 auto;
+    }
+  }
+  .swiperSlide-next {
+    .sectionReviews__slide-image {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+@include breakpoint(md) {
+  .sectionReviews__body {
+    .swiper {
+      margin: 0 -80px;
+      max-width: none;
+      overflow: hidden;
+    }
+  }
+  .swiperSlide-active,
+  .swiperSlide-next {
+    .sectionReviews__slide-image {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+  }
+}

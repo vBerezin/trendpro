@@ -1,0 +1,14 @@
+include ~components/icon/mixin
+
+mixin iconBox(data)
+	-
+		data = data || {};
+		tag = data.attributes && data.attributes.href ? 'a' : 'div';
+	#{tag}.iconBox(
+		class=data.class
+		class=mods('iconBox', data.mods)
+	)&attributes(data.attributes)
+		span.iconBox__inner
+			if (data.icon)
+				+icon(data.icon)
+			block

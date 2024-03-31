@@ -1,0 +1,86 @@
+include ~components/container/mixin
+include ~components/button/mixin
+include ~components/picture/mixin
+include ~components/image/mixin
+include ~containers/iconBox/mixin
+
+.heroMain
+	+container
+		.heroMain__inner
+			.heroMain__top
+				h1.heroMain__title Поможем#{' '}
+					b собрать бизнес
+				.heroMain__text.heroMain__text-mobile
+					|с помощью
+					br
+					| IT-решений
+					br
+					|и рекламы
+				.heroMain__text.heroMain__text-desktop
+					span с помощью современных IT-решений
+					span и эффективной интернет-рекламы
+			.heroMain__bottom
+				.heroMain__features
+					+image({
+						class: 'heroMain__features-img',
+						src: '/images/hero-figure.png',
+						srcset: {
+							'2x': '/images/hero-figure@2x.png'
+						},
+					})
+					.heroMain__features__text Давай познакомимся и обсудим на 
+						b бесплатной консультации
+						|#{' '}твой проект. Ты получишь:
+					ul.heroMain__features__list
+						li.heroMain__features__item
+							+iconBox({
+								class: 'heroMain__features__item-icon',
+								mods: ['blue', 'shadow', 'medium'],
+								icon: 'union'
+							})
+							| Лучшие решения#{' '}
+							br
+							|по задачам
+						li.heroMain__features__item
+							+iconBox({
+								class: 'heroMain__features__item-icon',
+								mods: ['blue', 'shadow', 'medium'],
+								icon: 'layers'
+							})
+							| Коммерческое#{' '}
+							br
+							|предложение
+				.heroMain__button
+					+button({
+						text: 'ОБСУДИТЬ ПРОЕКТ',
+						mods: ['block', 'large'],
+						attributes: {
+							href: '#feedback'
+						}
+					})
+		.heroMain__image
+			+picture({
+				class: 'heroMain__img',
+				src: '/images/hero.png',
+				srcset: {
+					'2x': '/images/hero@2x.png'
+				},
+				source: [
+					{
+						srcset: {
+							'1x': '/images/hero-desktop.png',
+							'2x': '/images/hero-desktop@2x.png'
+						},
+						media: '(min-width: 1280px)',
+						type: 'image/png'
+					},
+					{
+						srcset: {
+							'1x': '/images/hero-tablet.png',
+							'2x': '/images/hero-tablet@2x.png'
+						},
+						media: '(min-width: 640px)',
+						type: 'image/png'
+					},
+				]
+			})

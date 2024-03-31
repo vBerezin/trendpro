@@ -1,0 +1,15 @@
+include ~components/image/mixin
+include ~components/play/mixin
+
+mixin video(data)
+	-
+		data = data || {};
+		data.image.class = 'video__image';
+	.video(
+		class=data.class
+		class=mods('video', data.mods)
+	)&attributes(data.attributes)
+		+image(data.image)
+		+play({
+			class: 'video__play'
+		})

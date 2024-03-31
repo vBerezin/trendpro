@@ -1,0 +1,16 @@
+.breadcrumbs {
+  font-size: 12px;
+  color: #DFFF13;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+[href].breadcrumbs__item {
+  color: #fff;
+}
+.breadcrumbs__icon {
+  margin: 0 4px;
+  line-height: 0;
+}

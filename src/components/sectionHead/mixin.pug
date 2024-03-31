@@ -1,0 +1,8 @@
+mixin sectionHead(data)
+	-
+		data = data || {};
+	.sectionHead(
+		class=data.class
+		class=mods('sectionHead', data.mods)
+	)&attributes(data.attributes)
+		block

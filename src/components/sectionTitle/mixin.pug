@@ -1,0 +1,8 @@
+mixin sectionTitle(data)
+	-
+		data = data || {};
+	h2.sectionTitle(
+		class=data.class
+		class=mods('sectionTitle', data.mods)
+		)&attributes(data.attributes)
+		block

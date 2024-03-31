@@ -1,0 +1,111 @@
+@import "~components/breakpoints/mixin";
+@import "~styles/variables/fonts.scss";
+
+.popupSales {
+
+}
+.popupSales__head {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.popupSales__text {
+  color: #030303;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.popupSales__title {
+  color: #111111;
+  font-size: 20px;
+  font-weight: $font-weight-semiBold;
+  text-transform: uppercase;
+  flex: 1 1 auto;
+}
+.popupSales__icon {
+  flex: 0 0 auto;
+  margin-left: 20px;
+  font-size: 22px;
+}
+.popupSales__field {
+  margin-bottom: 10px;
+}
+.popupSales__success {
+  padding: 70px 0;
+  text-align: center;
+  color: #111111;
+  font-size: 12px;
+}
+.popupSales__success-title {
+  text-transform: uppercase;
+  font-weight: $font-weight-semiBold;
+  margin-bottom: 10px;
+}
+.popupSales__success-text {
+  margin-bottom: 30px;
+}
+.popupSales__success-link {
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  text-decoration: underline;
+}
+.popupSales__success.popupSales__success--red {
+  .popupSales__success-link {
+    color: #FF1422;
+  }
+}
+.popupSales__success.popupSales__success--green {
+  .popupSales__success-link {
+    color: #B1CD00;
+  }
+}
+.popupSales__success.popupSales__success--blue {
+  .popupSales__success-link {
+    color: #32C5FF;
+  }
+}
+
+@include breakpoint(sm) {
+  .popupSales__title {
+    font-size: 24px;
+  }
+  .popupSales__text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .popupSales__head {
+    margin-bottom: 30px;
+  }
+  .popupSales__field {
+    margin-bottom: 20px;
+  }
+  .popupSales__success {
+    font-size: 16px;
+  }
+  .popupSales__success-title {
+    font-size: 20px;
+  }
+  .popupSales__success-link {
+    font-size: 16px;
+  }
+}
+@include breakpoint(md) {
+  .popupSales__success {
+    font-size: 12px;
+  }
+  .popupSales__success-link {
+    font-size: 14px;
+  }
+  .popupSales__title {
+    font-size: 20px;
+  }
+  .popupSales__text {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .popupSales__head {
+    margin-bottom: 10px;
+  }
+  .popupSales__field {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,21 @@
+@import "~components/breakpoints/mixin.scss";
+@import "~styles/variables/fonts.scss";
+
+.sectionTitle {
+  font-size: 26px;
+  font-weight: $font-weight-bold;
+  color: currentColor;
+  margin: 0 0 16px 0;
+}
+
+@include breakpoint(sm) {
+  .sectionTitle {
+    font-size: 42px;
+    margin: 0 0 20px 0;
+  }
+}
+@include breakpoint(md) {
+  .sectionTitle {
+    font-size: 32px;
+  }
+}

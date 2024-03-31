@@ -1,0 +1,67 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/swiper/mixin
+include ~components/swiperSlide/mixin
+include ~components/swiperScrollbar/mixin
+include ~components/swiperPagination/mixin
+
+-
+	items = [
+		'/images/logos/club500.svg',
+		'/images/logos/domovit.svg',
+		'/images/logos/drMun.svg',
+		'/images/logos/factoryTents.png',
+		'/images/logos/foster.svg',
+		'/images/logos/hohman.png',
+		'/images/logos/kosmetik.svg',
+		'/images/logos/kvanta.svg',
+		'/images/logos/myDiamonds.svg',
+		'/images/logos/sensor.png',
+		'/images/logos/ukker.png',
+		'/images/logos/upperSetup.svg',
+	]
+
++section({
+	class: ['sectionClients', 'js-sectionClients']
+})
+	+container
+		+sectionHead({
+			class: 'sectionClients__head'
+		})
+			+sectionTitle Наши клиенты
+			p Работаем#{' '}
+				b с малым и средним бизнесом
+				br
+				|#{' '} и беремся за любые проекты, в которых мы уверенны.
+		.sectionClients__body
+			+swiper({
+				class: 'sectionClients__slider',
+				attributes: {
+					'data-ref': 'slider'
+				}
+			})
+				each item, index in [...items, ...items.reverse()]
+					+swiperSlide({
+						class: 'sectionClients__slide'
+					})
+						a(href="#" target="_blank" title=`Клиент ${index}`).sectionClients__item
+							.sectionClients__item-image
+								+image({
+									src: item
+								})
+		.sectionClients__footer
+			+swiperPagination({
+				class: 'sectionClients__pagination',
+				attributes: {
+					'data-ref': 'pagination'
+				}
+			})
+			+swiperScrollbar({
+				class: 'sectionClients__scrollbar',
+				attributes: {
+					'data-ref': 'scrollbar'
+				}
+			})

@@ -1,14 +1,14 @@
 include ~components/container/mixin
 include ~components/image/mixin
 
-include ~containers/icon-box/mixin
+include ~containers/iconBox/mixin
 
 header.header
 	+container
 		.header__top
 			.header__logo
 				include ~containers/logo/index
-			+icon-box({
+			+iconBox({
 				class: 'header__social',
 				icon: 'whatsapp',
 				mods: ['whatsapp', 'medium'],
@@ -16,7 +16,7 @@ header.header
 					href: '#'
 				}
 			})
-			+icon-box({
+			+iconBox({
 				class: 'header__social',
 				icon: 'telegram',
 				mods: ['telegram', 'medium'],
@@ -24,7 +24,7 @@ header.header
 					href: '#'
 				}
 			})
-			+icon-box({
+			+iconBox({
 				class: 'header__nav-toggle',
 				mods: ['medium'],
 				tagName: 'button',

@@ -1,0 +1,52 @@
+include ~components/container/mixin
+include ~components/button/mixin
+include ~components/image/mixin
+include ~containers/breadcrumbs/mixin
+include ~containers/video/mixin
+
+.heroVideo
+	+container
+		.heroVideo__breadcrumbs
+			+breadcrumbs({
+				items: [
+					'Главная',
+					'Упаковка бизнеса',
+					'Видеосъемка',
+				]
+			})
+		.heroVideo__inner
+			.heroVideo__body
+				.heroVideo__head
+					h1.heroVideo__title Производство контента под ключ
+					.heroVideo__desc Cнимаем видео, которые пересматривают.
+				.heroVideo__text
+					strong Вам достаточно описать задачу
+					p Мы сделаем остальную работу, уложимся в бюджет и сдадим материал раньше срока.
+				.heroVideo__button
+					+button({
+						mods: ['block'],
+						text: 'ОБСУДИТЬ ПРОЕКТ',
+						attributes: {
+							href: '#feedback'
+						}
+					})
+			.heroVideo__media
+				.heroVideo__media-wrapper
+					+image({
+						class: 'heroVideo__media-figure-1',
+						src: '/images/heroVideo-figure-1.png'
+					})
+					+image({
+						class: 'heroVideo__media-figure-2',
+						src: '/images/heroVideo-figure-2.png'
+					})
+					+video({
+						class: 'heroVideo__video',
+						image: {
+							src: '/images/hero-video.png',
+							srcset: {
+								'2x': '/images/hero-video@2x.png'
+							}
+						}
+					})
+				.heroVideo__media-text Просто посмотрите, как мы круто снимаем.

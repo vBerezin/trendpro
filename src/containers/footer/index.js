@@ -1,7 +1,7 @@
 import './style.scss'
 
 import '~components/container';
-import '~containers/icon-box';
+import '~containers/iconBox';
 import '~containers/logo';
 import {Breakpoints} from "~components/breakpoints";
 

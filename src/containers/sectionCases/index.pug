@@ -1,0 +1,135 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~components/picture/mixin
+include ~components/button/mixin
+
+-
+	items = [
+		{
+			title: 'Кредитный<br>брокер',
+			label: 'Интернет-маркетинг',
+			text: 'Запустили динамические объявления на поиске и за два месяца увеличили прибыль с рекламной кампании на 46%',
+			button: 'ВСЕ КЕЙСЫ ПО ИНТЕРНЕТ-МАРКЕТИНГУ',
+			logo: '/images/logos/fabrica-resheniy.svg',
+			picture: {
+				src: '/images/case-1.png',
+				srcset: {
+					'2x': '/images/case-1@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-1-desktop.png',
+						srcset: {
+							'2x': '/images/case-1-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 640px)',
+						src: '/images/case-1-tablet.png',
+						srcset: {
+							'2x': '/images/case-1-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
+		},
+		{
+			title: 'Онлайн<br>магазин',
+			label: 'Упаковка бизнеса',
+			text: 'Разработали дизайн индексной страницы для онлайн-магазина брендовой одежды. Адаптация сайта под любые устройства.',
+			button: 'ВСЕ КЕЙСЫ ПО УПАКОВКЕ БИЗНЕСА',
+			logo: '/images/logos/lux.png',
+			picture: {
+				src: '/images/case-2.png',
+				srcset: {
+					'2x': '/images/case-2@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-2-desktop.png',
+						srcset: {
+							'2x': '/images/case-2-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 640px)',
+						src: '/images/case-2-tablet.png',
+						srcset: {
+							'2x': '/images/case-2-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
+		},
+		{
+			title: 'Логистическая<br>компания',
+			label: 'Автоматизация бизнеса',
+			text: 'Внедрили сквозную аналитику Roistat.',
+			button: 'ВСЕ КЕЙСЫ ПО АВТОМАТИЗАЦИИ БИЗНЕСА',
+			logo: '/images/logos/transitplus.png',
+			picture: {
+				src: '/images/case-3.png',
+				srcset: {
+					'2x': '/images/case-3@2x.png'
+				},
+				source: [
+					{
+						media: '(min-width: 1024px)',
+						src: '/images/case-3-desktop.png',
+						srcset: {
+							'2x': '/images/case-3-desktop@2x.png'
+						},
+						type: 'image/png'
+					},
+					{
+						media: '(min-width: 640px)',
+						src: '/images/case-3-tablet.png',
+						srcset: {
+							'2x': '/images/case-3-tablet@2x.png'
+						},
+						type: 'image/png'
+					},
+				]
+			}
+		},
+	]
+
++section({
+	class: 'sectionCases'
+})
+	+container
+		+sectionHead
+			+sectionTitle Кейсы
+		.sectionCases__body
+			each item in items
+				.sectionCases__col
+					article.sectionCases__item
+						.sectionCases__item-head
+							.sectionCases__item-logo
+								+image({
+									src: item.logo
+								})
+							h4.sectionCases__item-title !{item.title}
+							.sectionCases__item-label #{item.label}
+							.sectionCases__item-image
+								+picture(item.picture)
+						.sectionCases__item-body #{item.text}
+						a(href="#").sectionCases__item-link Подробнее о кейсе
+					+button({
+						class: 'sectionCases__item-button',
+						text: item.button,
+						mods: ['small', 'block'],
+						attributes: {
+							href: '#'
+						}
+					})
+

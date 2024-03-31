@@ -1,0 +1,98 @@
+@import "~components/breakpoints/mixin";
+@import "~styles/variables/fonts.scss";
+
+.sectionFeedback {
+  color: #fff;
+  background-color: #2B2B2B;
+  background-image: linear-gradient(to bottom, #2B2B2B, #242424);
+}
+.sectionFeedback__main {
+  flex: 1 1 auto;
+}
+.sectionFeedback__title {
+  max-width: 450px;
+}
+.sectionFeedback__image {
+  display: none;
+  font-size: 0;
+  line-height: 0;
+  flex: 0 1 auto;
+}
+.sectionFeedback__text {
+  font-size: 12px;
+}
+.sectionFeedback__privacy {
+  text-align: center;
+  font-size: 10px;
+  font-weight: $font-weight-light;
+  color: #969696;
+  margin-top: 10px;
+}
+.sectionFeedback__field,
+.sectionFeedback__button {
+  margin-top: 16px;
+}
+.sectionFeedback__success {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 280px;
+}
+.sectionFeedback__success-box {
+  text-align: left;
+  border: 1px solid #ACACAC;
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-bottom: 40px;
+}
+.sectionFeedback__success-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  color: #DFFF13;
+}
+.sectionFeedback__success-link {
+  text-decoration: underline;
+}
+
+@include breakpoint(sm) {
+  .sectionFeedback__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .sectionFeedback__form {
+    max-width: 260px;
+  }
+  .sectionFeedback__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 260px + 30px;
+    right: 0;
+    bottom: 0;
+  }
+  .sectionFeedback__text {
+    font-size: 18px;
+  }
+  .sectionFeedback__field,
+  .sectionFeedback__button {
+    margin-top: 20px;
+  }
+  .sectionFeedback__privacy {
+    margin-top: 14px;
+  }
+}
+@include breakpoint(md) {
+  .sectionFeedback__image {
+    position: static;
+    display: block;
+  }
+  .sectionFeedback__text {
+    font-size: 14px;
+  }
+  .sectionFeedback__privacy {
+    margin-top: 20px;
+  }
+}

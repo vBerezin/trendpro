@@ -2,7 +2,7 @@ import './style.scss';
 
 import {Handlers} from '~scripts/utils/Handlers';
 import '~components/icon';
-import '~containers/icon-box';
+import '~containers/iconBox';
 
 export class Popup {
   #active;

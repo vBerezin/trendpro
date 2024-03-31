@@ -1,0 +1,40 @@
+include ~components/popup/mixin
+include ~components/button/mixin
+include ~components/input/mixin
+include ~containers/iconBox/mixin
+
+mixin popupSales(data)
+	- data = data || {}
+	+popup({
+		class: 'popupSales',
+		attributes: data.attributes
+	})
+		.popupSales__head
+			.popupSales__title !{data.title}
+			.popupSales__icon
+				+iconBox(data.icon)
+		form(action=data.action).popupSales__form.js-form
+			.popupSales__text !{data.text}
+			.popupSales__field
+				+input({
+					attributes: {
+						type: 'text',
+						placeholder: 'Ваше имя',
+						required: true
+					}
+				})
+			.popupSales__field
+				+input({
+					attributes: {
+						type: 'text',
+						placeholder: '+7 (000) 000-00-00',
+						required: true
+					}
+				})
+			+button({
+				class: 'popupSales__button',
+				mods: ['block', ...data.button.mods],
+				attributes: {
+					type: 'submit'
+				}
+			}) #{data.button.text}
