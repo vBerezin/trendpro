@@ -1,0 +1,66 @@
+include ~components/section/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+include ~containers/iconBox/mixin
+
+-
+	items = [
+		{
+			title: 'Александр Репин',
+			desc: 'CEO, Генеральный продюсер',
+			text: 'За 20 лет в бизнесе лично знаю, что необходимо видеть и слышать вашим клиентам, чтобы увеличить продажи. Это ДНК я передал своей команде.',
+			username: 'business_repin',
+			image: {
+				src: '/images/ceo-1.png',
+				srcset: {
+					'2x': '/images/ceo-1@2x.png'
+				},
+			}
+		},
+		{
+			title: 'Илья Иосилевич',
+			desc: 'CEO, Продюсер, Режиссер',
+			text: 'Мы не стараемся реализовать наш творческий потенциал за ваш счет. Мы создаем продукт, который помогает бизнесу заработать еще больше денег.',
+			username: 'ilua_scream',
+			image: {
+				src: '/images/ceo-2.png',
+				srcset: {
+					'2x': '/images/ceo-2@2x.png'
+				},
+			}
+		},
+	]
+
++section({
+	class: 'sectionCeo'
+})
+	+container
+		.sectionCeo__inner
+			each item, index in items
+				article.sectionCeo__item
+					.sectionCeo__item-body
+						.sectionCeo__item-head
+							h4.sectionCeo__item-title #{item.title}
+							.sectionCeo__item-level #{item.desc}
+						.sectionCeo__item-text #{item.text}
+						.sectionCeo__item-social
+							ul.sectionCeo__item-social-list
+								li
+									+iconBox({
+										icon: 'telegram',
+										mods: ['telegram', 'medium'],
+										attributes: {
+											href: '#'
+										}
+									})
+								li
+									+iconBox({
+										icon: 'instagram',
+										mods: ['instagram', 'medium'],
+										attributes: {
+											href: '#'
+										}
+									})
+							.sectionCeo__item-username #{item.username}
+					.sectionCeo__item-image
+						+image(item.image)

@@ -1,8 +1,8 @@
 mixin button(data)
 	-
 		data = data || {};
-		url = data.attributes && data.attributes.href;
-		tagName = url ? 'a' : 'button';
+		href = data.attributes && data.attributes.href;
+		tagName = href ? 'a' : 'button';
 	#{tagName}.button(
 		class=data.class
 		class=mods('button', data.mods)

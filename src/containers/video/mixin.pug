@@ -5,7 +5,9 @@ mixin video(data)
 	-
 		data = data || {};
 		data.image.class = 'video__image';
-	.video(
+		href = data.attributes && data.attributes.href
+		tagName = href ? 'a' : 'div';
+	#{tagName}.video(
 		class=data.class
 		class=mods('video', data.mods)
 	)&attributes(data.attributes)
@@ -13,3 +15,4 @@ mixin video(data)
 		+play({
 			class: 'video__play'
 		})
+
