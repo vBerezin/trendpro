@@ -1,0 +1,22 @@
+@import "~components/breakpoints/mixin";
+@import "~styles/variables/fonts";
+
+.sectionFeedback2 {
+  color: #fff;
+  background-color: #1A1919;
+  background-image: linear-gradient(to bottom, #282828, #1A1919);
+}
+.sectionFeedback2__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+.sectionFeedback2__privacy {
+  font-size: 10px;
+  margin-top: 20px;
+  color: #969696;
+  font-weight: $font-weight-light;
+}
+.sectionFeedback2__text {
+  margin-bottom: 35px;
+}

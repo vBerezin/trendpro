@@ -7,6 +7,7 @@ import '~containers/layoutPage';
 import '~containers/header';
 import '~containers/heroVideo';
 import '~containers/sectionCeo';
+import '~containers/sectionFeedback2';
 import '~containers/footer';
 
 import '~scripts/clicks';

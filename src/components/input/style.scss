@@ -18,6 +18,7 @@
   font-weight: $font-weight-regular;
   box-shadow: none;
   outline: none;
+  height: 50px;
 
   @include placeholder {
     color: #ACACAC;

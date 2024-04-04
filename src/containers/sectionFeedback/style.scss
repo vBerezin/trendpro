@@ -32,27 +32,6 @@
 .sectionFeedback__button {
   margin-top: 16px;
 }
-.sectionFeedback__success {
-  margin-top: 60px;
-  text-align: center;
-  max-width: 280px;
-}
-.sectionFeedback__success-box {
-  text-align: left;
-  border: 1px solid #ACACAC;
-  border-radius: 10px;
-  padding: 40px 30px;
-  margin-bottom: 40px;
-}
-.sectionFeedback__success-title {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: $font-weight-medium;
-  color: #DFFF13;
-}
-.sectionFeedback__success-link {
-  text-decoration: underline;
-}
 
 @include breakpoint(sm) {
   .sectionFeedback__inner {
