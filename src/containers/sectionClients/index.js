@@ -20,7 +20,7 @@ import '~components/image'
   const scrollbar = section.querySelector('[data-ref="scrollbar"]');
   const pagination = section.querySelector('[data-ref="pagination"]');
 
-  return new Swiper(slider, {
+  return new Swiper.init(slider, {
     modules: [Grid, Scrollbar, Pagination],
     mousewheel: true,
     slidesPerView: 3,

@@ -5,8 +5,6 @@ include ~components/container/mixin
 include ~components/image/mixin
 include ~components/picture/mixin
 include ~components/icon/mixin
-include ~components/swiper/mixin
-include ~components/swiperSlide/mixin
 include ~containers/iconBox/mixin
 
 +section({
@@ -56,68 +54,63 @@ include ~containers/iconBox/mixin
 						.sectionTeam__info-item
 							.sectionTeam__info-item__title &#8734;
 							.sectionTeam__info-item__text креативных идей
-			.sectionTeam__slider
-				+swiper({
-					attributes: {
-						'data-ref': 'slider'
-					}
-				})
+			.sectionTeam__slider-wrapper
+				.sectionTeam__slider(data-ref="slider")
 					each item in Array(2)
-						+swiperSlide
-							article.sectionTeam__slide
-								.sectionTeam__slide__image
-									+picture({
-										src: '/images/team-boss.png',
-										srcset: {
-											'2x': '/images/team-boss@2x.png'
-										},
-										source: [
-											{
-												media: '(min-width: 1024px)',
-												src: '/images/team-boss-desktop.png',
-												srcset: {
-													'2x': '/images/team-boss-desktop@2x.png'
-												},
-												type: 'image/png'
+						article.sectionTeam__slide
+							.sectionTeam__slide__image
+								+picture({
+									src: '/images/team-boss.png',
+									srcset: {
+										'2x': '/images/team-boss@2x.png'
+									},
+									source: [
+										{
+											media: '(min-width: 1024px)',
+											src: '/images/team-boss-desktop.png',
+											srcset: {
+												'2x': '/images/team-boss-desktop@2x.png'
 											},
-											{
-												media: '(min-width: 640px)',
-												src: '/images/team-boss-tablet.png',
-												srcset: {
-													'2x': '/images/team-boss-tablet@2x.png'
-												},
-												type: 'image/png'
-											}
-										]
+											type: 'image/png'
+										},
+										{
+											media: '(min-width: 640px)',
+											src: '/images/team-boss-tablet.png',
+											srcset: {
+												'2x': '/images/team-boss-tablet@2x.png'
+											},
+											type: 'image/png'
+										}
+									]
+								})
+							.sectionTeam__slide__body
+								h4.sectionTeam__slide__title Александр Репин
+								ul.sectionTeam__slide__list
+									li Генеральный директор TREND PRO
+									li Главный по маркетингу в CLUB 500 с 2018 года
+									li Лично продвигаю все свои направления в бизнесе на протяжении 23 лет
+								.sectionTeam__slide__divider
+								blockquote.sectionTeam__slide__blockquote
+									strong Мы дорожим репутацией и каждым клиентом.
+									|#{' '}Я лично проконтролирую соблюдение всех договоренностей и сервис.
+								.sectionTeam__slide__social.sectionTeam__social
+									+iconBox({
+										class: 'sectionTeam__social__link',
+										icon: 'telegram',
+										mods: ['small', 'telegram2'],
+										attributes: {
+											href: '#'
+										}
 									})
-								.sectionTeam__slide__body
-									h4.sectionTeam__slide__title Александр Репин
-									ul.sectionTeam__slide__list
-										li Генеральный директор TREND PRO
-										li Главный по маркетингу в CLUB 500 с 2018 года
-										li Лично продвигаю все свои направления в бизнесе на протяжении 23 лет
-									.sectionTeam__slide__divider
-									blockquote.sectionTeam__slide__blockquote
-										strong Мы дорожим репутацией и каждым клиентом.
-										|#{' '}Я лично проконтролирую соблюдение всех договоренностей и сервис.
-									.sectionTeam__slide__social.sectionTeam__social
-										+iconBox({
-											class: 'sectionTeam__social__link',
-											icon: 'telegram',
-											mods: ['small', 'telegram2'],
-											attributes: {
-												href: '#'
-											}
-										})
-										+iconBox({
-											class: 'sectionTeam__social__link',
-											icon: 'instagram',
-											mods: ['small', 'instagram'],
-											attributes: {
-												href: '#'
-											}
-										})
-										.sectionTeam__social__name business_repin
+									+iconBox({
+										class: 'sectionTeam__social__link',
+										icon: 'instagram',
+										mods: ['small', 'instagram'],
+										attributes: {
+											href: '#'
+										}
+									})
+									.sectionTeam__social__name business_repin
 				.sectionTeam__swipe
 					+image({
 						src: '/images/swipe.gif'

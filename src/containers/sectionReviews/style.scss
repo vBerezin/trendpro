@@ -1,7 +1,7 @@
 @import "~components/breakpoints/mixin";
 @import "~styles/mixins/image-cover";
 @import "~styles/variables/transition";
-@import "~styles/variables/fonts.scss";
+@import "~styles/variables/fonts";
 
 .sectionReviews {
   color: #fff;
@@ -41,12 +41,12 @@
   }
 }
 
-.swiperSlide.sectionReviews__slide {
+.swiper-slide.sectionReviews__slide {
   width: 160px;
 }
 
-.swiperSlide.is-active,
-.swiperSlide-active {
+.swiper-slide.is-active,
+.swiper-slide-active {
   .sectionReviews__slide-image {
     transform: scale(1);
     opacity: 1;
@@ -54,7 +54,7 @@
 }
 
 @include breakpoint(sm) {
-  .swiperSlide.sectionReviews__slide {
+  .swiper-slide.sectionReviews__slide {
     padding: 0 15px;
   }
   .sectionReviews__body {
@@ -64,7 +64,7 @@
       margin: 0 auto;
     }
   }
-  .swiperSlide-next {
+  .swiper-slide-next {
     .sectionReviews__slide-image {
       transform: scale(1);
       opacity: 1;
@@ -79,8 +79,8 @@
       overflow: hidden;
     }
   }
-  .swiperSlide-active,
-  .swiperSlide-next {
+  .swiper-slide-active,
+  .swiper-slide-next {
     .sectionReviews__slide-image {
       transform: scale(0.9);
       opacity: 0.8;

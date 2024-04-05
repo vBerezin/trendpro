@@ -1,0 +1,92 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/image/mixin
+
+-
+	items = [
+		{
+			src: "/images/logos/sber.png",
+			srcset: {
+				"2x": "/images/logos/sber@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/mersedes-benz.svg",
+		},
+		{
+			src: "/images/logos/xfit.png",
+			srcset: {
+				"2x": "/images/logos/xfit@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/kfc.png",
+			srcset: {
+				"2x": "/images/logos/kfc@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/opora-russia.svg",
+		},
+		{
+			src: "/images/logos/grinatom.png",
+			srcset: {
+				"2x": "/images/logos/grinatom@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/dobrograd.png",
+			srcset: {
+				"2x": "/images/logos/dobrograd@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/gamma-m.svg",
+		},
+		{
+			src: "/images/logos/radisson.png",
+			srcset: {
+				"2x": "/images/logos/radisson@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/tehnovek.png",
+			srcset: {
+				"2x": "/images/logos/tehnovek@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/suzdal-napitki.png",
+			srcset: {
+				"2x": "/images/logos/suzdal-napitki@2x.png"
+			}
+		},
+		{
+			src: "/images/logos/juteks.png",
+			srcset: {
+				"2x": "/images/logos/juteks@2x.png"
+			}
+		},
+	]
+
++section({
+	class: ['sectionPartners', 'js-sectionPartners']
+})
+	+container
+		+sectionHead({
+			class: 'sectionPartners__head'
+		})
+			+sectionTitle Нам доверяют
+			p
+				strong 400+
+				|#{' '}работ за десять лет
+			p
+				strong 250+
+				|#{' '}компании уже увеличили прибыль
+		.sectionPartners__body
+			.sectionPartners__slider(data-ref="slider")
+				each item in items
+					.sectionPartners__item
+						+image(item)

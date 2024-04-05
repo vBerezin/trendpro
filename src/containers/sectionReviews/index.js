@@ -15,8 +15,7 @@ import '~components/image'
   }
   const slider = section.querySelector('[data-ref="slider"]');
 
-  return new Swiper(slider, {
-    mousewheel: true,
+  return new Swiper.init(slider, {
     loop: false,
     slidesPerView: 'auto',
     centeredSlides: true,

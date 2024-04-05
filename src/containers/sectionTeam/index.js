@@ -20,7 +20,7 @@ import '~containers/iconBox'
   const prev = section.querySelector('[data-ref="slider.prev"]');
   const next = section.querySelector('[data-ref="slider.next"]');
 
-  return new Swiper(slider, {
+  return new Swiper.init(slider, {
     modules: [EffectCreative],
     slidesPerView: 1,
     loop: true,

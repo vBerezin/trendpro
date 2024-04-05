@@ -3,8 +3,6 @@ include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/container/mixin
 include ~components/image/mixin
-include ~components/swiper/mixin
-include ~components/swiperSlide/mixin
 include ~components/swiperScrollbar/mixin
 include ~components/swiperPagination/mixin
 
@@ -37,16 +35,9 @@ include ~components/swiperPagination/mixin
 				br
 				|#{' '} и беремся за любые проекты, в которых мы уверенны.
 		.sectionClients__body
-			+swiper({
-				class: 'sectionClients__slider',
-				attributes: {
-					'data-ref': 'slider'
-				}
-			})
+			.sectionClients__slider(data-ref="slider")
 				each item, index in [...items, ...items.reverse()]
-					+swiperSlide({
-						class: 'sectionClients__slide'
-					})
+					.sectionClients__slide
 						a(href="#" target="_blank" title=`Клиент ${index}`).sectionClients__item
 							.sectionClients__item-image
 								+image({

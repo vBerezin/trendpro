@@ -1,0 +1,33 @@
+@import "~components/breakpoints/mixin";
+@import "~styles/variables/fonts";
+
+.sectionPartners {
+  color: #fff;
+  background-color: #1D1D1D;
+  background-image: linear-gradient(to bottom, #1D1D1D, #1A1A1A);
+}
+.sectionPartners__head {
+  b,
+  strong {
+    color: #DFFF13;
+    font-weight: $font-weight-bold;
+  }
+  p {
+    margin: 0;
+  }
+}
+.sectionPartners__slider {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: stretch;
+}
+.sectionPartners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(#000, 0.3);
+  padding: 10px;
+  min-height: 56px;
+}
