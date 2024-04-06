@@ -20,8 +20,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -44,24 +42,23 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Clone master branch
+        run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./output
       - name: Build
         run: ${{ steps.detect-package-manager.outputs.runner }} build:prod
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./build
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Set git config and add changes
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git add --all
+        working-directory: ./build
+      - name: Push and send notification
+        run: |
+          COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
+          git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
+          git commit -m "${COMMIT_MESSAGE}"
+          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git master
+          curl "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage?text=$COMMIT_MESSAGE %0ALook at ${GITHUB_ACTOR}.github.io %0ARepository%3A github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io&chat_id=${{ secrets.ADMIN_ID }}"
+        working-directory: ./build
