@@ -9,6 +9,8 @@ import '~containers/heroVideo';
 import '~containers/sectionCeo';
 import '~containers/sectionFeedback2';
 import '~containers/sectionPartners';
+import '~containers/sectionSteps';
+import '~containers/sectionPricing';
 import '~containers/footer';
 
 import '~scripts/clicks';

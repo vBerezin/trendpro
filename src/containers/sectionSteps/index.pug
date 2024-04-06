@@ -1,0 +1,72 @@
+include ~components/section/mixin
+include ~components/container/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+
+-
+	items = [
+		{
+			id: '01',
+			title: 'ПОИСК ИДЕИ',
+			list: [
+				'Заполнение брифа',
+				'Вникаем в задачу и ищем лучшее решение',
+				'Утверждение концепции',
+				'Подбор референсов',
+			]
+		},
+		{
+			id: '02',
+			title: 'ПРЕД-ПРОДАКШН',
+			list: [
+				'Разработка сценария, раскадровки',
+				'Создание аниматика, бордоматика',
+				'Поиск локаций',
+				'Кастинг актеров',
+				'Подбор визуальных решений'
+			]
+		},
+		{
+			id: '03',
+			title: 'ПРОДАКШН',
+			list: [
+				'Подбор съемочной команды',
+				'Застройка локации художниками-постановщиками',
+				'Подготовка реквизита',
+				'Съемочный процесс'
+			]
+		},
+		{
+			id: '04',
+			title: 'ПОСТ-ПРОДАКШН',
+			list: [
+				'Монтаж и озвучка',
+				'Эффекты и графика',
+				'Цветокоррекция',
+			]
+		},
+		{
+			id: 'ВАЖНО',
+			list: [
+				'Согласовываем с вами каждый этап',
+				'Работа над каждым этапом проектов ведется по индивидуально разработанному календарю для строгого соблюдения поставленных сроков.'
+			]
+		},
+	]
+
++section({
+	class: 'sectionSteps'
+})
+	+container
+		+sectionHead
+			+sectionTitle Профессиональный подход к разработке видео
+		.sectionSteps__body
+			each item in items
+				.sectionSteps__item
+					.sectionSteps__item-head
+						.sectionSteps__item-id #{item.id}
+						.sectionSteps__item-title #{item.title}
+					.sectionSteps__item-text
+						ul.sectionSteps__item-list
+							each li in item.list
+								li #{li}

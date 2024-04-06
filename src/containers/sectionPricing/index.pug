@@ -1,0 +1,95 @@
+include ~components/section/mixin
+include ~components/container/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/button/mixin
+include ~containers/popupSales/mixin
+
+-
+	items = [
+		{
+			title: 'Рекламное видео',
+			time: 'от 7 дней',
+			price: 'от 100 тыс. руб'
+		},
+		{
+			title: 'Видео о компании',
+			time: 'от 14 дней',
+			price: 'от 200 тыс. руб'
+		},
+		{
+			title: 'Имиджевое видео',
+			time: 'от 14 дней',
+			price: 'от 200 тыс. руб'
+		},
+		{
+			title: 'Имиджевое видео',
+			time: 'от 14 дней',
+			price: 'от 100 тыс. руб'
+		},
+		{
+			title: 'Дипфейк',
+			time: 'от 30 дней',
+			price: 'от 300 тыс. руб'
+		},
+		{
+			title: 'Коммерческая фотосъемка',
+			time: 'Индивидуально',
+			price: 'Индивидуально'
+		},
+		{
+			title: 'Коммерческая фотосъемка',
+			time: 'Индивидуально',
+			price: 'Индивидуально'
+		},
+		{
+			title: 'Упаковка маркетплейсов',
+			time: 'от 7 дней',
+			price: 'от 30 тыс. руб'
+		},
+		{
+			title: '2D и 3D графика',
+			time: 'Индивидуально',
+			price: 'Индивидуально'
+		},
+	]
+
++section({
+	class: 'sectionPricing'
+})
+	+container
+		+sectionHead
+			+sectionTitle Стоимость и сроки
+		.sectionPricing__body
+			each item in items
+				.sectionPricing__item
+					.sectionPricing__item-inner
+						.sectionPricing__item-title #{item.title}
+						.sectionPricing__item-time #{item.time}
+						.sectionPricing__item-price #{item.price}
+					.sectionPricing__item-button
+						+button({
+							text: 'ОСТАВИТЬ ЗАЯВКУ',
+							mods: ['block', 'large'],
+							attributes: {
+								'data-click': 'popup',
+								'data-popup-id': 'popup.sales:green',
+							}
+						})
+
++popupSales({
+	action: `/api/popup.sales:green.html`,
+	title: 'Оставить заявку',
+	text: 'Заполните форму и мы свяжемся с вами в течение 5 минут',
+	icon: {
+		icon: 'sale',
+		mods: ['green', 'shadow', 'icon-white']
+	},
+	attributes: {
+		id: `popup.sales:green`
+	},
+	button: {
+		text: 'ОСТАВИТЬ ЗАЯВКУ',
+		mods: ['green']
+	}
+})

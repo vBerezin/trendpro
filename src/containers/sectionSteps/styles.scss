@@ -1,0 +1,56 @@
+@import "~styles/variables/fonts";
+
+.sectionSteps {
+  color: #fff;
+  background-color: #191919;
+  background-image: linear-gradient(to bottom, #191919, #222222);
+}
+.sectionSteps__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 40px;
+  padding: 0 40px;
+
+  & + .sectionSteps__item {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #4F4F4F;
+  }
+}
+.sectionSteps__item-head {
+  display: flex;
+}
+.sectionSteps__item-id {
+  color: #DFFF13;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: $font-weight-medium;
+  margin-right: 45px;
+}
+.sectionSteps__item-title {
+  flex: 1 1 auto;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: $font-weight-medium;
+}
+.sectionSteps__item-text {
+  font-size: 14px;
+}
+.sectionSteps__item-list {
+  display: block;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 1em;
+    position: relative;
+  }
+  li:before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
