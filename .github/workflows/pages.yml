@@ -27,17 +27,14 @@ jobs:
           node-version: "16"
       - name: Install
         run: npm ci
+      - name: Clone
+        run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./build
       - name: Build
         run: npm run build:prod
-      - name: Set git config and add changes
+      - name: Push
         run: |
           git config --global user.email "${GITHUB_ACTOR}@https://users.noreply.github.com/"
           git config --global user.name "${GITHUB_ACTOR}"
-          git add --all
-        working-directory: ./build
-      - name: Push and send notification
-        run: |
-          COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
-          git commit -m "${COMMIT_MESSAGE}"
+          git add ./build
+          git commit -m "${GITHUB_REPOSITORY} $(date +'%Y-%m-%d %H:%M:%S')"
           git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git master
-        working-directory: ./build
