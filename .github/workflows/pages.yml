@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  pages:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
