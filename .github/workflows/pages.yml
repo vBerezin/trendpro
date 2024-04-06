@@ -24,10 +24,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "16"
-      - name: Install dependencies
-        run: npm ci
       - name: Clone master branch
         run: git clone "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master --single-branch ./output
+      - name: Install
+        run: npm ci
       - name: Build
         run: npm run build:prod
       - name: Set git config and add changes
