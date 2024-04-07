@@ -4,15 +4,16 @@ on:
   push:
     branches: ["master"]
 
+permissions:
+  contents: write
+  pages: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
   pages:
-    permissions:
-      contents: write
-      pages: write
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
