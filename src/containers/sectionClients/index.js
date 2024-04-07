@@ -22,7 +22,6 @@ import '~components/image'
 
   return new Swiper.init(slider, {
     modules: [Grid, Scrollbar, Pagination],
-    mousewheel: true,
     slidesPerView: 3,
     spaceBetween: 14,
     grid: {

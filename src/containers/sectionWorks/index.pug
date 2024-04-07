@@ -1,0 +1,77 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/icon/mixin
+include ~components/swiperPagination/mixin
+
+include ~containers/workCard/mixin
+
+-
+	items = [
+		{
+			label: 'Рекламный ролик',
+			title: 'Муромский квас',
+		},
+		{
+			label: 'Рекламный ролик',
+			title: 'LETHEAD',
+		},
+		{
+			label: 'Имиджевое видео',
+			title: 'X-FIT',
+		},
+		{
+			label: 'Имиджевое видео',
+			title: 'Предвыборный<br>ролик',
+		},
+		{
+			label: 'Имиджевое видео',
+			title: 'Автомастерская<br>«У Петровича»',
+		},
+		{
+			label: 'Имиджевое видео',
+			title: 'Суздальские<br>напитки',
+		},
+	]
+
++section({
+	class: ['sectionWorks', 'js-sectionWorks']
+})
+	+container
+		+sectionHead
+			+sectionTitle Наши работы
+			p С описанием задач, решений и видео-результатом.
+		.sectionWorks__body
+			.sectionWorks__slider-wrapper
+				button.sectionWorks__prev(data-ref="slider.prev")
+					+icon('left')
+				button.sectionWorks__next(data-ref="slider.next")
+					+icon('right')
+				.sectionWorks__slider(data-ref="slider")
+					each index in [0,1,2,0,1,2,3,4,5,3,4,5]
+						- item = items[index]
+						.sectionWorks__slide
+							+workCard({
+								label: item.label,
+								title: item.title,
+								image: {
+									src: `/images/work-${index + 1}.png`,
+									srcset: {
+										'2x': `/images/work-${index + 1}@2x.png`
+									}
+								},
+								button: {
+									text: 'ПОДРОБНЕЕ О КЕЙСЕ',
+									attributes: {
+										href: '#'
+									}
+								}
+							})
+			+swiperPagination({
+				class: 'sectionWorks__pagination',
+				mods: ['square', 'white'],
+				attributes: {
+					'data-ref': 'pagination'
+				}
+			})

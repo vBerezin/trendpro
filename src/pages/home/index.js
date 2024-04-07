@@ -1,4 +1,6 @@
-import './style.scss'
+import "~styles/common.scss";
+
+import "~icons/sprite/symbol/sprite.scss";
 
 import '~containers/layoutPage'
 import '~containers/header'
@@ -13,3 +15,5 @@ import '~containers/sectionServices'
 import '~containers/sectionCases'
 
 import '~scripts/clicks';
+
+import './style.scss';

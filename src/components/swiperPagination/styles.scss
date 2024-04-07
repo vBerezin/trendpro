@@ -24,3 +24,23 @@
   background-color: #32C5FF;
   opacity: 1;
 }
+.swiperPagination.swiperPagination--square {
+  .swiper-pagination-bullet {
+    border-radius: 2px;
+    width: 12px;
+    height: 12px;
+  }
+}
+.swiper-pagination-horizontal.swiperPagination--square {
+  .swiper-pagination-bullet {
+    margin: 0 5px;
+  }
+}
+.swiperPagination.swiperPagination--white {
+  .swiper-pagination-bullet {
+    background-color: #717171;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+}

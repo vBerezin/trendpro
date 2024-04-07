@@ -1,2 +1,6 @@
 mixin swiperPagination(data)
-	.swiperPagination.swiper-pagination(class=data.class)&attributes(data.attributes)
+	-  data = data || {}
+	.swiperPagination.swiper-pagination(
+		class=data.class
+		class=mods('swiperPagination', data.mods)
+	)&attributes(data.attributes)
