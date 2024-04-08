@@ -1,0 +1,48 @@
+include ~components/section/mixin
+include ~components/sectionHead/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+
+-
+	items = [
+		{
+			nav: 'Съемка Reels',
+		},
+		{
+			nav: 'Рекламные видео',
+		},
+		{
+			nav: 'Презентационный ролик',
+		},
+		{
+			nav: 'Упаковка маркетплейсов',
+		},
+		{
+			nav: 'Имиджевые видео',
+		},
+		{
+			nav: '2D и 3D графика',
+		},
+		{
+			nav: 'Дипфейки',
+		},
+		{
+			nav: 'Коммерческая фотосъёмка',
+		},
+	]
+
++section({
+	class: ['sectionCatalog' ,'js-sectionCatalog']
+})
+	+container
+		+sectionHead
+			+sectionTitle Что мы делаем лучше других
+			p У нас заказывают рекламные ролики, фильмы-презентации, клипы и другие форматы.
+		nav.sectionCatalog__nav
+			ul.sectionCatalog__nav-list
+				each item, index in items
+					li
+						button.sectionCatalog__nav-button(
+							data-tab=index
+							data-click='tab'
+							class=index === 0 && 'is-active') #{item.nav}

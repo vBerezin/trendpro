@@ -145,7 +145,7 @@ include ~containers/popupSales/mixin
 									'sectionServices__tab',
 									index === 0 ? 'is-active' : ''
 								]
-								data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+								data-tab=index
 								data-click="tab"
 								) #{card.title}
 	.sectionServices__body
@@ -155,7 +155,7 @@ include ~containers/popupSales/mixin
 			each card, index in cards
 				.sectionServices__grid-item(
 					class=(index === 0 ? 'is-active' : '')
-					data-tab=card.title.replace(/[^аА-яЯ]/g,'').toLowerCase()
+					data-tab=index
 				)
 					+serviceCard(card)
 		.sectionServices__swipe
