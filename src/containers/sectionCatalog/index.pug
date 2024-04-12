@@ -2,6 +2,7 @@ include ~components/section/mixin
 include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/container/mixin
+include ~components/button/mixin
 
 -
 	items = [
@@ -31,6 +32,20 @@ include ~components/container/mixin
 		},
 	]
 
+mixin tab(data)
+	.sectionCatalog__tab(data-tab=data.index class=data.index === 0 && 'is-active')
+		.sectionCatalog__tab-body
+			.sectionCatalog__tab-head
+				.sectionCatalog__tab-title #{data.title}
+				|!{data.text}
+			.sectionCatalog__tab-text
+				block
+			.sectionCatalog__tab-button
+				+button({
+					text: 'УЗНАТЬ СТОИМОСЬ',
+					mods: ['block']
+				})
+
 +section({
 	class: ['sectionCatalog' ,'js-sectionCatalog']
 })
@@ -46,3 +61,97 @@ include ~components/container/mixin
 							data-tab=index
 							data-click='tab'
 							class=index === 0 && 'is-active') #{item.nav}
+		+tab({
+			index: 0,
+			title: 'Reels и Stories',
+			text: 'Мы единственная команда на рынке, готовая выпускать видеоконтент для ваших социальных сетей «под ключ»',
+		})
+			.sectionCatalog__tab-subtitle Над вашим проектом, будут трудиться:
+			.sectionCatalog__lists
+				ul.sectionCatalog__list
+					li тренера речевой харизмы
+					li редактор и копирайтеры
+					li съемочная команда
+				ul.sectionCatalog__list
+					li сценаристы
+					li продюсер
+		+tab({
+			index: 1,
+			title: 'Рекламные видео',
+			text: `
+			<p>Реклама раскрывает преимущества и особенности товара, побуждая зрителя к покупке.</p>
+			<p>30-секундный ролик расскажет о вашем продукте больше и лучше, чем самый навороченный сайт.</p>
+			`,
+		})
+			.sectionCatalog__tab-subtitle Когда пригодится?
+			ul.sectionCatalog__list
+				li запуск нового продукта или услуги
+				li увеличение узнаваемости бренда
+				li повышение продаж
+				li привлечение новых клиентов
+				li поддержка имиджа и лояльности
+		+tab({
+			index: 2,
+			title: 'Презентационное видео о компании',
+			text: `Рассказ о компании и демонстрация ее ценностей через художественные и эмоциональный приемы.`,
+		})
+			.sectionCatalog__tab-subtitle Когда пригодится?
+			ul.sectionCatalog__list
+				li поиск партнеров и клиентов
+				li привлечение инвестиций
+				li выход на новые рынки
+				li ребрендинг
+		+tab({
+			index: 3,
+			title: 'Упаковка маркетплейсов',
+			text: `
+				<p>Презентация или реклама продукта на любых маркетплейсах мира.</p>
+				<p>Тщательно изучим ваш товар и покажем его с лучшей стороны. Мы поможем вам вызвать у покупателя желание купить его.</p>
+			`,
+		})
+		+tab({
+			index: 4,
+			title: 'Имиджевое видео',
+			text: 'Креативный рассказ о компании. Такие ролики размещают на сайте, показывают на встречах и включают на публичных мероприятиях.',
+		})
+			.sectionCatalog__tab-subtitle Когда пригодится?
+			ul.sectionCatalog__list
+				li создание или корректировка имиджа
+				li выход компании на новые рынки
+				li создание имиджа компании
+				li демонстрация технологий
+				li привлечение инвестиций
+				li поиск партнёров
+				li ребрендинг
+		+tab({
+			index: 5,
+			title: 'Создание 2D и 3D графики',
+			text: 'Возьмемся за реализацию самых смелых идей с помощью анимации и компьютерной графики.',
+		})
+			p
+				strong Создадим удивительные визуальные произведения,
+				|#{' '}которые не только запомнятся, но и помогут достичь целей:
+			ul.sectionCatalog__list
+				li 3D-модели
+				li визуальные эффекты
+				li рекламные и промо-ролики
+				li VR и дополненная реальность
+				li визуализации для сайтов и приложений
+		+tab({
+			index: 6,
+			title: 'Создание DEEPFAKE',
+			text: `Да! Мы создаем дипфейки! Для вас мы сможем воссоздать практически любого популярного персонажа и внедрить в ваш видеоролик!`,
+		})
+			.sectionCatalog__tab-subtitle2 Мы уже успешно реализовали создание точных копий:
+			p Квентина Тарантино для телеканала ТНТ, Джену Ортегу (актриса из сериала Уэнсдэй), на чьем ютуб канале уже более 5 миллионов подписчиков, Леонардо Ди Каприо, Марго Роби, Роберта Паттисона и многих других.
+		+tab({
+			index: 7,
+			title: 'Коммерческая фотосъёмка',
+			text: `Жанр фотографии на стыке рекламы и искусства. Применим для всех сфер бизнеса и коммуникаций.`,
+		})
+			.sectionCatalog__tab-subtitle Когда пригодится?
+			ul.sectionCatalog__list
+				li создание интернет-каталогов
+				li запуск наружной рекламы
+				li упаковка продукции
+				li запуск сайтов
