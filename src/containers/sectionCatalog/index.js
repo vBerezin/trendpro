@@ -4,9 +4,11 @@ import '~components/section'
 import '~components/sectionTitle'
 import '~components/sectionHead'
 import '~components/container'
+import '~components/image'
+import '~containers/video'
 
 import {Handlers} from "~scripts/utils/Handlers";
-
+import {Swiper} from "~components/swiper";
 
 (() => {
   const section = document.querySelector('.js-sectionCatalog');
@@ -14,6 +16,7 @@ import {Handlers} from "~scripts/utils/Handlers";
     return false;
   }
   const tabs = section.querySelectorAll('[data-tab]');
+  const sliders = section.querySelectorAll('[data-ref="slider"]');
 
   function setActive(id) {
     tabs.forEach((el) => {
@@ -28,4 +31,11 @@ import {Handlers} from "~scripts/utils/Handlers";
     }
   })
   section.addEventListener('click', handleClick);
+  sliders.forEach((el) => {
+    Swiper.init(el, {
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+    })
+  })
 })();
