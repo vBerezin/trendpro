@@ -1,4 +1,5 @@
 import "~styles/common.scss";
+import '~scripts/common';
 
 import "~icons/sprite/symbol/sprite.scss";
 
@@ -13,7 +14,5 @@ import '~containers/sectionFeatures'
 import '~containers/sectionTeam'
 import '~containers/sectionServices'
 import '~containers/sectionCases'
-
-import '~scripts/clicks';
 
 import './style.scss';

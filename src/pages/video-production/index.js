@@ -1,4 +1,5 @@
 import "~styles/common.scss";
+import '~scripts/common';
 
 import "~icons/sprite/symbol/sprite.scss";
 
@@ -16,7 +17,5 @@ import '~containers/sectionSteps';
 import '~containers/sectionPricing';
 import '~containers/sectionWorks';
 import '~containers/footer';
-
-import '~scripts/clicks';
 
 import './style.scss';

@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin.scss";
 @import "~styles/variables/fonts";
 
 .sectionCeo {
@@ -5,15 +6,15 @@
   background-color: #202020;
   background-image: linear-gradient(to bottom, #202020, #1D1D1D);
 }
-.sectionCeo__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
 .sectionCeo__item {
   display: flex;
   flex-direction: row-reverse;
-  font-size: 14px;
+  align-items: center;
+  margin-bottom: 40px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
   &:nth-child(odd) {
     text-align: right;
     flex-direction: row;
@@ -24,19 +25,20 @@
   }
 }
 .sectionCeo__item-title {
-  font-size: 20px;
+  font-size: 16px;
+  margin-bottom: 4px;
   font-weight: $font-weight-medium;
-  margin-bottom: 6px;
 }
 .sectionCeo__item-head {
-  margin-bottom: 24px;
+  font-size: 10px;
+  margin-bottom: 20px;
 }
 .sectionCeo__item-text {
   font-style: italic;
+  font-size: 12px;
 }
 .sectionCeo__item-body {
   flex: 1 1 auto;
-  padding: 60px 0;
 }
 .sectionCeo__item-social {
   margin-top: 20px;
@@ -45,7 +47,7 @@
   justify-content: flex-start;
 }
 .sectionCeo__item-username {
-  margin-left: 10px;
+  margin-left: 6px;
   font-size: 12px;
 }
 .sectionCeo__item-social-list {
@@ -62,6 +64,79 @@
 .sectionCeo__item-image {
   font-size: 0;
   line-height: 0;
-  flex: 0 0 240px;
   align-self: center;
+  flex: 0 0 150px;
+}
+
+@include breakpoint(sm) {
+  .sectionCeo__item-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .sectionCeo__item-head {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .sectionCeo__item-text {
+    font-size: 16px;
+  }
+  .sectionCeo__item-username {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  .sectionCeo__item-image {
+    margin-right: 40px;
+    flex: 0 0 auto;
+
+    img {
+      height: 460px;
+    }
+  }
+  .sectionCeo__item {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(odd) {
+      .sectionCeo__item-image {
+        margin-right: 0;
+        margin-left: 40px;
+      }
+    }
+  }
+}
+@include breakpoint(md) {
+  .sectionCeo__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sectionCeo__item {
+    margin-bottom: 0;
+
+    &:nth-child(odd) {
+      .sectionCeo__item-image {
+        margin: 0;
+      }
+    }
+  }
+  .sectionCeo__item-image {
+    margin: 0;
+    img {
+      height: 350px;
+    }
+  }
+  .sectionCeo__item-title {
+    font-size: 20px;
+  }
+  .sectionCeo__item-head {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  .sectionCeo__item-text {
+    font-size: 14px;
+  }
+  .sectionCeo__item-username {
+    font-size: 12px;
+  }
 }

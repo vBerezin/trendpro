@@ -45,17 +45,17 @@
   line-height: 20px;
   padding: 10px;
 }
-.button.button--large {
-  font-size: 20px;
-  line-height: 30px;
-  padding: 25px 20px;
-}
 
 @include breakpoint(sm) {
   .button.button--small {
     font-size: 16px;
     line-height: 20px;
     padding: 20px 10px;
+  }
+  .button.button--large {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 25px 20px;
   }
 }
 @include breakpoint(lg) {
