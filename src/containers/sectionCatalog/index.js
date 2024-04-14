@@ -8,7 +8,7 @@ import '~components/image'
 import '~containers/video'
 
 import {Handlers} from "~scripts/utils/Handlers";
-import {Swiper} from "~components/swiper";
+import {Swiper,Mousewheel } from "~components/swiper";
 
 (() => {
   const section = document.querySelector('.js-sectionCatalog');
@@ -17,6 +17,7 @@ import {Swiper} from "~components/swiper";
   }
   const tabs = section.querySelectorAll('[data-tab]');
   const sliders = section.querySelectorAll('[data-ref="slider"]');
+  const swipers = new Map();
 
   function setActive(id) {
     tabs.forEach((el) => {
@@ -32,10 +33,15 @@ import {Swiper} from "~components/swiper";
   })
   section.addEventListener('click', handleClick);
   sliders.forEach((el) => {
-    Swiper.init(el, {
+    const tab = el.closest('[data-tab]');
+    const swiper = Swiper.init(el, {
+      modules: [Mousewheel],
+      mousewheel: true,
       loop: true,
+      cssMode: false,
       slidesPerView: 'auto',
       spaceBetween: 0,
-    })
-  })
+    });
+    swipers.set(tab.dataset.tab, swiper);
+  });
 })();

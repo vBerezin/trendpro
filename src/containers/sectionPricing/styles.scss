@@ -4,6 +4,14 @@
   color: #fff;
   background-color: #222222;
   background-image: linear-gradient(to bottom, #222222, #191919);
+  position: relative;
+  z-index: 5;
+}
+.sectionPricing__figure {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  z-index: -1;
 }
 .sectionPricing__item {
   display: flex;

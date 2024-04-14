@@ -3,6 +3,7 @@ include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/container/mixin
 include ~components/icon/mixin
+include ~components/image/mixin
 include ~components/swiperPagination/mixin
 
 include ~containers/workCard/mixin
@@ -38,6 +39,13 @@ include ~containers/workCard/mixin
 +section({
 	class: ['sectionWorks', 'js-sectionWorks']
 })
+	+image({
+		class: 'sectionWorks__figure',
+		src: '/images/figures/section-figure-6.png',
+		srcset: {
+			'2x': '/images/figures/section-figure-6@2x.png',
+		}
+	})
 	+container
 		+sectionHead
 			+sectionTitle Наши работы

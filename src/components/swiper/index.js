@@ -1,7 +1,7 @@
 import './styles';
 
 
-export { Grid, EffectCreative } from 'swiper/modules';
+export { Grid, EffectCreative, Mousewheel } from 'swiper/modules';
 import {Swiper as Instance} from 'swiper';
 
 export function wrap(el) {

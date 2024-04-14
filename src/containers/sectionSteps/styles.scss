@@ -4,6 +4,13 @@
   color: #fff;
   background-color: #191919;
   background-image: linear-gradient(to bottom, #191919, #222222);
+  position: relative;
+}
+.sectionSteps__figure {
+  z-index: 10;
+  position: absolute;
+  left: 30%;
+  bottom: -100px;
 }
 .sectionSteps__item {
   display: grid;

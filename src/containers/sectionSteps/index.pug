@@ -1,4 +1,5 @@
 include ~components/section/mixin
+include ~components/image/mixin
 include ~components/container/mixin
 include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
@@ -57,6 +58,13 @@ include ~components/sectionTitle/mixin
 +section({
 	class: 'sectionSteps'
 })
+	+image({
+		class: 'sectionSteps__figure',
+		src: '/images/figures/section-figure-4.png',
+		srcset: {
+			'2x': '/images/figures/section-figure-4@2x.png',
+		}
+	})
 	+container
 		+sectionHead
 			+sectionTitle Профессиональный подход к разработке видео

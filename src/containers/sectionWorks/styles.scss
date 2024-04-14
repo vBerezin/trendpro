@@ -2,6 +2,15 @@
   color: #fff;
   background-color: #1A1A1A;
   background-image: linear-gradient(to bottom, #1A1A1A, #111111, #282828);
+  position: relative;
+  z-index: 10;
+}
+.sectionWorks__figure {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: -200px;
+  pointer-events: none;
 }
 .sectionWorks__slider-wrapper {
   position: relative;

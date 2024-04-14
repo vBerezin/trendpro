@@ -5,6 +5,7 @@ import '~components/sectionHead'
 import '~components/sectionTitle'
 import '~components/container'
 import '~components/icon'
+import '~components/image'
 import {Swiper, Grid} from '~components/swiper';
 import {Pagination} from '~components/swiperPagination';
 
