@@ -259,7 +259,7 @@ mixin tab(data)
 				.sectionCatalog__slider(data-ref=(hasSlider && "slider"))
 					if (sliderData.images)
 						each image in sliderData.images
-							.sectionCatalog__slide
+							.sectionCatalog__slide.sectionCatalog__slide--image
 								.sectionCatalog__image
 									+image(image)
 								if (image.link)
@@ -267,7 +267,7 @@ mixin tab(data)
 										a(href="#" target="_blank").sectionCatalog__slide-link #{image.link}
 					if (sliderData.videos)
 						each video in sliderData.videos
-							.sectionCatalog__slide(class=(sliderData.reels && 'sectionCatalog__slide--reels'))
+							.sectionCatalog__slide(class=(sliderData.reels ? 'sectionCatalog__slide--reels' : 'sectionCatalog__slide--video'))
 								+video({
 									class: sliderData.reels
 										? 'sectionCatalog__reels'

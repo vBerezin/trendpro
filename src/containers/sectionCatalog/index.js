@@ -8,7 +8,8 @@ import '~components/image'
 import '~containers/video'
 
 import {Handlers} from "~scripts/utils/Handlers";
-import {Swiper,Mousewheel } from "~components/swiper";
+import {Swiper} from "~components/swiper";
+import {Breakpoints} from "~components/breakpoints";
 
 (() => {
   const section = document.querySelector('.js-sectionCatalog');
@@ -35,12 +36,18 @@ import {Swiper,Mousewheel } from "~components/swiper";
   sliders.forEach((el) => {
     const tab = el.closest('[data-tab]');
     const swiper = Swiper.init(el, {
-      modules: [Mousewheel],
-      mousewheel: true,
       loop: true,
-      cssMode: false,
       slidesPerView: 'auto',
+      centeredSlides: true,
+      longSwipes: false,
       spaceBetween: 0,
+      breakpoints: {
+        [Breakpoints.points.md]: {
+          loop: true,
+          longSwipes: true,
+          centeredSlides: false,
+        },
+      }
     });
     swipers.set(tab.dataset.tab, swiper);
   });
