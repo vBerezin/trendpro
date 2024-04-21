@@ -3,6 +3,7 @@ include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/container/mixin
 include ~components/image/mixin
+include ~components/picture/mixin
 include ~components/button/mixin
 include ~containers/video/mixin
 
@@ -289,27 +290,32 @@ mixin tab(data)
 +section({
 	class: ['sectionCatalog', 'js-sectionCatalog']
 })
-	+image({
-		class: 'sectionCatalog__figure-1',
-		src: '/images/figures/section-figure-1.png',
-		srcset: {
-			'2x': '/images/figures/section-figure-1@2x.png',
-		}
-	})
-	+image({
-		class: 'sectionCatalog__figure-2',
-		src: '/images/figures/section-figure-2.png',
-		srcset: {
-			'2x': '/images/figures/section-figure-2@2x.png',
-		}
-	})
-	+image({
-		class: 'sectionCatalog__figure-3',
-		src: '/images/figures/section-figure-3.png',
-		srcset: {
-			'2x': '/images/figures/section-figure-3@2x.png',
-		}
-	})
+	for i in [1,2,3]
+		+picture({
+			class: `sectionCatalog__figure-${i}`,
+			src: `/images/figures/section-figure-${i}.png`,
+			srcset: {
+				'2x': `/images/figures/section-figure-${i}@2x.png`
+			},
+			source: [
+				{
+					media: '(min-width: 1024px)',
+					src: `/images/figures/section-figure-${i}-desktop.png`,
+					srcset: {
+						'2x': `/images/figures/section-figure-${i}-desktop@2x.png`
+					},
+					type: 'image/png'
+				},
+				{
+					media: '(min-width: 640px)',
+					src: `/images/figures/section-figure-${i}-tablet.png`,
+					srcset: {
+						'2x': `/images/figures/section-figure-${i}-tablet@2x.png`
+					},
+					type: 'image/png'
+				}
+			]
+		})
 	+container
 		+sectionHead
 			+sectionTitle Что мы делаем лучше других

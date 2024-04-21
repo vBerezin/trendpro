@@ -38,6 +38,7 @@ import '~containers/workCard'
     breakpoints: {
       1024: {
         slidesPerView: 3,
+        spaceBetween: 20,
       }
     },
     on: {

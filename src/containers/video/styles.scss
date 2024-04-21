@@ -1,3 +1,4 @@
+@import "~components/breakpoints/mixin";
 @import "~styles/mixins/image-cover.scss";
 
 .video {
@@ -17,5 +18,16 @@
   @include image-cover;
 }
 .video__play {
-  font-size: 50px;
+  font-size: 46px;
+}
+
+@include breakpoint(sm) {
+  .video__play {
+    font-size: 60px;
+  }
+}
+@include breakpoint(md) {
+  .video__play {
+    font-size: 50px;
+  }
 }

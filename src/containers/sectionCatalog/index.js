@@ -5,6 +5,7 @@ import '~components/sectionTitle'
 import '~components/sectionHead'
 import '~components/container'
 import '~components/image'
+import '~components/picture'
 import '~containers/video'
 
 import {Handlers} from "~scripts/utils/Handlers";
@@ -16,9 +17,10 @@ import {Breakpoints} from "~components/breakpoints";
   if (!section) {
     return false;
   }
+  const swipers = new Map();
   const tabs = section.querySelectorAll('[data-tab]');
   const sliders = section.querySelectorAll('[data-ref="slider"]');
-  const swipers = new Map();
+  const playButtons = section.querySelectorAll('.play');
 
   function setActive(id) {
     tabs.forEach((el) => {
@@ -51,4 +53,14 @@ import {Breakpoints} from "~components/breakpoints";
     });
     swipers.set(tab.dataset.tab, swiper);
   });
+
+  Breakpoints.once(
+    ['xxs', 'xs', 'sm'],
+    () => {
+      playButtons.forEach((play) => play.classList.add('play--green'))
+    },
+    () => {
+      playButtons.forEach((play) => play.classList.remove('play--green'))
+    },
+  )
 })();

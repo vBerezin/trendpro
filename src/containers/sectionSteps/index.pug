@@ -1,5 +1,5 @@
 include ~components/section/mixin
-include ~components/image/mixin
+include ~components/picture/mixin
 include ~components/container/mixin
 include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
@@ -58,12 +58,22 @@ include ~components/sectionTitle/mixin
 +section({
 	class: 'sectionSteps'
 })
-	+image({
-		class: 'sectionSteps__figure',
-		src: '/images/figures/section-figure-4.png',
+	+picture({
+		class: `sectionSteps__figure`,
+		src: `/images/figures/section-figure-4.png`,
 		srcset: {
-			'2x': '/images/figures/section-figure-4@2x.png',
-		}
+			'2x': `/images/figures/section-figure-4@2x.png`
+		},
+		source: [
+			{
+				media: '(min-width: 1024px)',
+				src: `/images/figures/section-figure-4-desktop.png`,
+				srcset: {
+					'2x': `/images/figures/section-figure-4-desktop@2x.png`
+				},
+				type: 'image/png'
+			},
+		]
 	})
 	+container
 		+sectionHead

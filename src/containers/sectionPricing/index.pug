@@ -4,6 +4,7 @@ include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/button/mixin
 include ~components/image/mixin
+include ~components/picture/mixin
 include ~containers/popupSales/mixin
 
 -
@@ -56,34 +57,50 @@ include ~containers/popupSales/mixin
 	]
 
 +section({
-	class: 'sectionPricing'
+	class: ['sectionPricing', 'js-sectionPricing']
 })
-	+image({
-		class: 'sectionPricing__figure',
-		src: '/images/figures/section-figure-5.png',
+	+picture({
+		class: `sectionPricing__figure`,
+		src: `/images/figures/section-figure-5.png`,
 		srcset: {
-			'2x': '/images/figures/section-figure-5@2x.png',
-		}
+			'2x': `/images/figures/section-figure-5@2x.png`
+		},
+		source: [
+			{
+				media: '(min-width: 1024px)',
+				src: `/images/figures/section-figure-5-desktop.png`,
+				srcset: {
+					'2x': `/images/figures/section-figure-5-desktop@2x.png`
+				},
+				type: 'image/png'
+			},
+		]
 	})
 	+container
 		+sectionHead
 			+sectionTitle Стоимость и сроки
 		.sectionPricing__body
-			each item in items
-				.sectionPricing__item
-					.sectionPricing__item-inner
-						.sectionPricing__item-title #{item.title}
-						.sectionPricing__item-time #{item.time}
-						.sectionPricing__item-price #{item.price}
-					.sectionPricing__item-button
-						+button({
-							text: 'ОСТАВИТЬ ЗАЯВКУ',
-							mods: ['block', 'large'],
-							attributes: {
-								'data-click': 'popup',
-								'data-popup-id': 'popup.sales:green',
-							}
-						})
+			.sectionPricing__slider(data-ref="slider")
+				each item in items
+					.sectionPricing__slide
+						.sectionPricing__item
+							.sectionPricing__item-inner
+								.sectionPricing__item-title #{item.title}
+								.sectionPricing__item-time #{item.time}
+								.sectionPricing__item-price #{item.price}
+							.sectionPricing__item-button
+								+button({
+									text: 'ОСТАВИТЬ ЗАЯВКУ',
+									mods: ['block', 'large'],
+									attributes: {
+										'data-click': 'popup',
+										'data-popup-id': 'popup.sales:green',
+									}
+								})
+			.sectionPricing__swipe
+				+image({
+					src: '/images/swipe.gif'
+				})
 
 +popupSales({
 	action: `/api/popup.sales:green.html`,

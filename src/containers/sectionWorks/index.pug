@@ -39,12 +39,30 @@ include ~containers/workCard/mixin
 +section({
 	class: ['sectionWorks', 'js-sectionWorks']
 })
-	+image({
-		class: 'sectionWorks__figure',
-		src: '/images/figures/section-figure-6.png',
+	+picture({
+		class: `sectionWorks__figure`,
+		src: `/images/figures/section-figure-6.png`,
 		srcset: {
-			'2x': '/images/figures/section-figure-6@2x.png',
-		}
+			'2x': `/images/figures/section-figure-6@2x.png`
+		},
+		source: [
+			{
+				media: '(min-width: 1024px)',
+				src: `/images/figures/section-figure-6-desktop.png`,
+				srcset: {
+					'2x': `/images/figures/section-figure-6-desktop@2x.png`
+				},
+				type: 'image/png'
+			},
+			{
+				media: '(min-width: 640px)',
+				src: `/images/figures/section-figure-6-tablet.png`,
+				srcset: {
+					'2x': `/images/figures/section-figure-6-tablet@2x.png`
+				},
+				type: 'image/png'
+			}
+		]
 	})
 	+container
 		+sectionHead
@@ -52,10 +70,11 @@ include ~containers/workCard/mixin
 			p С описанием задач, решений и видео-результатом.
 		.sectionWorks__body
 			.sectionWorks__slider-wrapper
-				button.sectionWorks__prev(data-ref="slider.prev")
-					+icon('left')
-				button.sectionWorks__next(data-ref="slider.next")
-					+icon('right')
+				.sectionWorks__slider-nav
+					button.sectionWorks__prev(data-ref="slider.prev")
+						+icon('left')
+					button.sectionWorks__next(data-ref="slider.next")
+						+icon('right')
 				.sectionWorks__slider(data-ref="slider")
 					each index in [0,1,2,0,1,2,3,4,5,3,4,5]
 						- item = items[index]
@@ -76,10 +95,14 @@ include ~containers/workCard/mixin
 									}
 								}
 							})
-			+swiperPagination({
-				class: 'sectionWorks__pagination',
-				mods: ['square', 'white'],
-				attributes: {
-					'data-ref': 'pagination'
-				}
-			})
+			.sectionWorks__slider-pagination
+				+swiperPagination({
+					mods: ['square', 'white'],
+					attributes: {
+						'data-ref': 'pagination'
+					}
+				})
+			.sectionWorks__swipe
+				+image({
+					src: '/images/swipe.gif'
+				})

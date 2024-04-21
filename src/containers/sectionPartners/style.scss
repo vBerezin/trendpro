@@ -31,3 +31,28 @@
   padding: 10px;
   min-height: 56px;
 }
+.sectionPartners__swipe {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  margin-top: 20px;
+
+  img {
+    height: 40px;
+  }
+}
+
+@include breakpoint(sm) {
+  .sectionPartners__swipe {
+    margin-top: 30px;
+
+    img {
+      height: 60px;
+    }
+  }
+}
+@include breakpoint(md) {
+  .sectionPartners__swipe {
+    display: none;
+  }
+}

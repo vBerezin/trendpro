@@ -1,3 +1,5 @@
+@import "~components/breakpoints/mixin.scss";
+
 .sectionWorks {
   color: #fff;
   background-color: #1A1A1A;
@@ -9,17 +11,17 @@
   position: absolute;
   z-index: -1;
   right: 0;
-  top: -200px;
+  top: -100px;
   pointer-events: none;
 }
 .sectionWorks__slider-wrapper {
   position: relative;
 }
 .sectionWorks__slider {
-  margin: -20px;
+  margin: -10px;
 }
 .sectionWorks__slide {
-  padding: 20px;
+  padding: 10px;
 }
 .sectionWorks__prev,
 .sectionWorks__next {
@@ -34,6 +36,10 @@
   padding: 5px;
   font-size: 30px;
   z-index: 10;
+
+  .icon {
+    font-size: 1em;
+  }
 }
 .sectionWorks__prev {
   left: -60px;
@@ -47,6 +53,45 @@
   border-radius: 0 10px 10px 0;
   background: linear-gradient(to left, #2E2E2E, #111111);
 }
-.sectionWorks__pagination {
-  margin-top: 40px;
+.sectionWorks__slider-pagination,
+.sectionWorks__slider-nav {
+  display: none;
+}
+.sectionWorks__swipe {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  margin-top: 20px;
+
+  img {
+    height: 40px;
+  }
+}
+
+@include breakpoint(sm) {
+  .sectionWorks__swipe {
+    margin-top: 40px;
+
+    img {
+      height: 60px;
+    }
+  }
+  .sectionWorks__figure {
+    top: -200px;
+  }
+}
+@include breakpoint(md) {
+  .sectionWorks__figure {
+    top: -250px;
+  }
+  .sectionWorks__swipe {
+    display: none;
+  }
+  .sectionWorks__slider-nav {
+    display: block;
+  }
+  .sectionWorks__slider-pagination {
+    display: block;
+    margin-top: 40px;
+  }
 }

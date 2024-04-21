@@ -1,4 +1,5 @@
 @import "~styles/variables/fonts";
+@import "~components/breakpoints/mixin";
 
 .sectionPricing {
   color: #fff;
@@ -10,41 +11,126 @@
 .sectionPricing__figure {
   position: absolute;
   left: 0;
-  top: 15%;
+  top: 30%;
   z-index: -1;
 }
+.sectionPricing__slide {
+  padding: 15px 10px;
+}
+.sectionPricing__slider {
+  margin: -15px -10px;
+}
 .sectionPricing__item {
-  display: flex;
   background: #292929;
   border-radius: 20px;
-  margin-bottom: 30px;
 }
 .sectionPricing__item-inner {
-  display: flex;
-  align-items: center;
-  box-shadow: -5px -5px 24px #141414, 5px 5px 18px #202020;
+  box-shadow:
+    -5px -5px 15px #141414,
+    5px 5px 10px #202020;
   border-radius: inherit;
-  flex: 1 1 auto;
-  padding: 30px 0;
+  padding: 20px;
 }
 .sectionPricing__item-title {
-  font-size: 22px;
+  font-size: 18px;
   color: #DFFF13;
   font-weight: $font-weight-semiBold;
-  flex: 0 0 260px;
-  padding: 0 30px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #4F4F4F;
+  text-align: center;
 }
 .sectionPricing__item-time,
 .sectionPricing__item-price {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
-  padding: 20px;
-  border-left: 1px solid #4F4F4F;
-  flex: 0 0 auto;
-  min-width: 190px;
+  margin-top: 20px;
 }
 .sectionPricing__item-button {
-  padding: 30px;
-  flex: 0 0 290px;
+  padding: 20px;
+}
+.sectionPricing__swipe {
+  text-align: center;
+  margin-top: 20px;
+
+  img {
+    height: 40px;
+  }
+}
+
+@include breakpoint(sm) {
+  .sectionPricing__swipe {
+    margin-top: 40px;
+
+    img {
+      height: 60px;
+    }
+  }
+  .sectionPricing__slide {
+    padding: 15px;
+  }
+  .sectionPricing__slider {
+    margin: -15px;
+  }
+  .sectionPricing__item {
+    display: flex;
+  }
+  .sectionPricing__item-inner {
+    flex: 1 1 auto;
+    padding: 30px;
+  }
+  .sectionPricing__item-button {
+    padding: 30px;
+    flex: 0 0 290px;
+    align-self: center;
+  }
+  .sectionPricing__item-title {
+    font-size: 22px;
+    text-align: left;
+  }
+  .sectionPricing__item-time,
+  .sectionPricing__item-price {
+    font-size: 18px;
+    text-align: left;
+  }
+}
+@include breakpoint(md) {
+  .sectionPricing__swipe {
+    display: none;
+  }
+  .sectionPricing__figure {
+    top: 15%;
+  }
+  .sectionPricing__slide {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .sectionPricing__slider {
+    margin: 0;
+  }
+  .sectionPricing__item-inner {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    align-items: center;
+    padding: 30px 0;
+  }
+  .sectionPricing__item-title {
+    font-size: 22px;
+    padding: 0 30px;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .sectionPricing__item-time,
+  .sectionPricing__item-price {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px 30px;
+    border-left: 1px solid #4F4F4F;
+    margin-top: 0;
+  }
+  .sectionPricing__item-button {
+    padding: 30px;
+    flex: 0 0 290px;
+  }
 }
