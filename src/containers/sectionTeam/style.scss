@@ -4,7 +4,7 @@
 .sectionTeam {
   color: #fff;
   background-color: #232323;
-  background-image: linear-gradient(to bottom, #232323, #1D1D1D);
+  background-image: linear-gradient(to bottom, #232323, #0E0E0E 60%, #323232);
 }
 .sectionTeam__subtitle {
   font-size: 14px;
@@ -71,7 +71,6 @@
   font-weight: $font-weight-regular;
   background-color: #F4F4F4;
   border-radius: 20px;
-  padding: 0 20px;
 }
 .sectionTeam__slide__image {
   overflow: hidden;
@@ -88,19 +87,19 @@
 .sectionTeam__slide__title {
   font-size: 12px;
   font-weight: $font-weight-medium;
-  margin: 0 0 10px 0;
+  margin-bottom: 6px;
 }
 .sectionTeam__slide__list {
   display: block;
   padding: 0;
   margin: 0;
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.2;
 
   li {
     display: block;
     position: relative;
-    margin: 1em 0;
+    margin: 0.5em 0;
     padding: 0 0 0 15px;
 
     &::before {
@@ -125,7 +124,7 @@
 }
 .sectionTeam__slide__blockquote {
   display: block;
-  margin: 20px 0;
+  margin: 12px 0;
   font-style: italic;
   font-size: 9px;
 
@@ -135,7 +134,7 @@
   }
 }
 .sectionTeam__slide__social {
-  margin-top: 30px;
+  margin-top: 12px;
 }
 .sectionTeam__social {
   display: flex;
@@ -186,8 +185,17 @@
   .sectionTeam__info {
     margin-top: 50px;
   }
+  .sectionTeam__slide {
+    padding: 0 20px;
+  }
+  .sectionTeam__slide__list {
+    li {
+      margin: 1em 0;
+    }
+  }
   .sectionTeam__slide__title {
     font-size: 22px;
+    margin-bottom: 10px;
   }
   .sectionTeam__slide__list {
     font-size: 14px;
@@ -204,6 +212,10 @@
   }
   .sectionTeam__slide__blockquote {
     font-size: 14px;
+    margin: 20px 0;
+  }
+  .sectionTeam__slide__social {
+    margin-top: 30px;
   }
   .sectionTeam__social__name {
     font-size: 14px;

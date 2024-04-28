@@ -8,7 +8,7 @@
   background: rgba(#E6E6E6, 0.14);
   color: #383838;
   line-height: 0;
-  border-radius: 22px;
+  border-radius: 12px;
   border: none;
 }
 .iconBox__inner {
@@ -22,7 +22,6 @@
 }
 .iconBox.iconBox--medium {
   padding: 3px;
-  border-radius: 15px;
 
   .iconBox__inner {
     width: 30px;

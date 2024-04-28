@@ -13,7 +13,9 @@ include ~components/button/mixin
 			label: 'Интернет-маркетинг',
 			text: 'Запустили динамические объявления на поиске и за два месяца увеличили прибыль с рекламной кампании на 46%',
 			button: 'ВСЕ КЕЙСЫ ПО ИНТЕРНЕТ-МАРКЕТИНГУ',
-			logo: '/images/logos/fabrica-resheniy.svg',
+			logo: {
+				src: '/images/logos/fabrica-resheniy.svg',
+			},
 			picture: {
 				src: '/images/case-1.png',
 				srcset: {
@@ -44,7 +46,9 @@ include ~components/button/mixin
 			label: 'Упаковка бизнеса',
 			text: 'Разработали дизайн индексной страницы для онлайн-магазина брендовой одежды. Адаптация сайта под любые устройства.',
 			button: 'ВСЕ КЕЙСЫ ПО УПАКОВКЕ БИЗНЕСА',
-			logo: '/images/logos/lux.png',
+			logo: {
+				src: '/images/logos/lux.png',
+			},
 			picture: {
 				src: '/images/case-2.png',
 				srcset: {
@@ -75,7 +79,12 @@ include ~components/button/mixin
 			label: 'Автоматизация бизнеса',
 			text: 'Внедрили сквозную аналитику Roistat.',
 			button: 'ВСЕ КЕЙСЫ ПО АВТОМАТИЗАЦИИ БИЗНЕСА',
-			logo: '/images/logos/transitplus.png',
+			logo: {
+				src: '/images/logos/transitplus.png',
+				srcset: {
+					'2x': '/images/logos/transitplus@2x.png'
+				},
+			},
 			picture: {
 				src: '/images/case-3.png',
 				srcset: {
@@ -115,9 +124,7 @@ include ~components/button/mixin
 					article.sectionCases__item
 						.sectionCases__item-head
 							.sectionCases__item-logo
-								+image({
-									src: item.logo
-								})
+								+image(item.logo)
 							h4.sectionCases__item-title !{item.title}
 							.sectionCases__item-label #{item.label}
 							.sectionCases__item-image

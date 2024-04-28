@@ -1,5 +1,7 @@
 extends ~containers/layoutPage/index
 
+include ~containers/sectionFeedback/mixin
+
 block variables
 	- TITLE = 'Главная'
 
@@ -11,4 +13,6 @@ block main
 	include ~containers/sectionFeatures/index
 	include ~containers/sectionClients/index
 	include ~containers/sectionReviews/index
-	include ~containers/sectionFeedback/index
+	+sectionFeedback({
+		mods: ['2']
+	})

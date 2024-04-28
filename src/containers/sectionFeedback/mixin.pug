@@ -1,0 +1,50 @@
+include ~components/section/mixin
+include ~components/sectionTitle/mixin
+include ~components/container/mixin
+include ~components/button/mixin
+include ~components/input/mixin
+
+mixin sectionFeedback(data)
+	- data = data || {}
+	+section({
+		class: [
+			'sectionFeedback',
+			mods('sectionFeedback', data.mods)
+		],
+		id: 'feedback'
+	})
+		+container
+			.sectionFeedback__inner
+				.sectionFeedback__main
+					+sectionTitle({
+						class: 'sectionFeedback__title'
+					}) Хотите так же?
+					form(action="/api/feedback-success.html").sectionFeedback__form.js-form
+						.sectionFeedback__text Оставьте заявку и мы свяжемся с вами в течение 5 минут
+						.sectionFeedback__row
+							.sectionFeedback__field
+								+input({
+									mods: ['white'],
+									attributes: {
+										type: 'text',
+										placeholder: 'Ваше имя',
+										required: true
+									}
+								})
+							.sectionFeedback__field
+								+input({
+									mods: ['white'],
+									attributes: {
+										type: 'text',
+										placeholder: '+7 (000) 000-00-00',
+										required: true
+									}
+								})
+							.sectionFeedback__button
+								+button({
+									mods: ['block'],
+									attributes: {
+										type: 'submit'
+									}
+								}) ОСТАВИТЬ ЗАЯВКУ
+						.sectionFeedback__privacy Отправляя заявку вы даете согласие на обработку персональных данных

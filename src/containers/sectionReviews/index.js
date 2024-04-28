@@ -19,6 +19,7 @@ import '~components/image'
     loop: false,
     slidesPerView: 'auto',
     centeredSlides: true,
+    initialSlide: 1,
     on: {
       activeIndexChange(swiper) {
         const {realIndex: currentIndex, params: {slidesPerView}, slides} = swiper;

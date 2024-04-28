@@ -11,7 +11,7 @@ import '~containers/header';
 import '~containers/heroVideo';
 import '~containers/sectionCeo';
 import '~containers/sectionCatalog';
-import '~containers/sectionFeedback2';
+import '~containers/sectionFeedback';
 import '~containers/sectionPartners';
 import '~containers/sectionSteps';
 import '~containers/sectionPricing';

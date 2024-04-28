@@ -1,6 +1,7 @@
 extends ~containers/layoutPage/index
 
 include ~components/container/mixin
+include ~containers/sectionFeedback/mixin
 
 block variables
 	- TITLE = 'Видео продакшн'
@@ -13,4 +14,4 @@ block main
 	include ~containers/sectionSteps/index
 	include ~containers/sectionPricing/index
 	include ~containers/sectionWorks/index
-	include ~containers/sectionFeedback2/index
+	+sectionFeedback()

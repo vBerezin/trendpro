@@ -1,77 +1,64 @@
+@import "~components/breakpoints/mixin.scss";
 @import "~components/breakpoints/mixin";
-@import "~styles/variables/fonts.scss";
+@import "~styles/variables/fonts";
 
 .sectionFeedback {
   color: #fff;
-  background-color: #2B2B2B;
-  background-image: linear-gradient(to bottom, #2B2B2B, #242424);
+  background-color: #1A1919;
+  background-image: linear-gradient(to bottom, #282828, #1A1919);
 }
-.sectionFeedback__main {
-  flex: 1 1 auto;
+.sectionFeedback--2 {
+  background-image: linear-gradient(to bottom, #121212, #2B2B2B);
 }
-.sectionFeedback__title {
-  max-width: 450px;
-}
-.sectionFeedback__image {
-  display: none;
-  font-size: 0;
-  line-height: 0;
-  flex: 0 1 auto;
+.sectionFeedback__privacy {
+  font-size: 10px;
+  margin-top: 10px;
+  color: #969696;
+  font-weight: $font-weight-light;
+  text-align: center;
 }
 .sectionFeedback__text {
   font-size: 12px;
+  margin-bottom: 20px;
 }
-.sectionFeedback__privacy {
-  text-align: center;
-  font-size: 10px;
-  font-weight: $font-weight-light;
-  color: #969696;
-  margin-top: 10px;
-}
-.sectionFeedback__field,
-.sectionFeedback__button {
-  margin-top: 16px;
+.sectionFeedback__field {
+  margin-bottom: 16px;
 }
 
 @include breakpoint(sm) {
-  .sectionFeedback__inner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-  }
   .sectionFeedback__form {
-    max-width: 260px;
-  }
-  .sectionFeedback__image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 260px + 30px;
-    right: 0;
-    bottom: 0;
+    max-width: 360px;
   }
   .sectionFeedback__text {
     font-size: 18px;
+    margin-bottom: 30px;
   }
-  .sectionFeedback__field,
-  .sectionFeedback__button {
-    margin-top: 20px;
+  .sectionFeedback__field {
+    margin-bottom: 20px;
   }
   .sectionFeedback__privacy {
-    margin-top: 14px;
+    font-size: 12px;
+    margin-top: 20px;
   }
 }
 @include breakpoint(md) {
-  .sectionFeedback__image {
-    position: static;
-    display: block;
-  }
   .sectionFeedback__text {
     font-size: 14px;
+    margin-bottom: 35px;
+  }
+  .sectionFeedback__field {
+    margin-bottom: 0;
+  }
+  .sectionFeedback__form {
+    max-width: none;
   }
   .sectionFeedback__privacy {
-    margin-top: 20px;
+    font-size: 10px;
+    text-align: left;
+  }
+  .sectionFeedback__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
   }
 }

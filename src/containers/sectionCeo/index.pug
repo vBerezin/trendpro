@@ -20,7 +20,7 @@ include ~containers/iconBox/mixin
 		{
 			title: 'Илья Иосилевич',
 			desc: 'CEO, Продюсер, Режиссер',
-			text: 'Мы не стараемся реализовать наш творческий потенциал за ваш счет. Мы создаем продукт, который помогает бизнесу заработать еще больше денег.',
+			text: 'Мы не стараемся реализовать наш творческий потенциал за ваш счет.<br>Мы создаем продукт, который помогает бизнесу заработать еще больше денег.',
 			username: 'ilua_scream',
 			image: {
 				src: '/images/ceo-2.png',
@@ -40,9 +40,9 @@ include ~containers/iconBox/mixin
 				article.sectionCeo__item
 					.sectionCeo__item-body
 						.sectionCeo__item-head
-							h4.sectionCeo__item-title #{item.title}
-							.sectionCeo__item-level #{item.desc}
-						.sectionCeo__item-text #{item.text}
+							h4.sectionCeo__item-title !{item.title}
+							.sectionCeo__item-level !{item.desc}
+						.sectionCeo__item-text !{item.text}
 						.sectionCeo__item-social
 							ul.sectionCeo__item-social-list
 								li
