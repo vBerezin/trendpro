@@ -3,8 +3,7 @@
 
 .sectionCeo {
   color: #fff;
-  background-color: #202020;
-  background-image: linear-gradient(to bottom, #202020, #1D1D1D);
+  background-color: #1A1A1A;
 }
 .sectionCeo__item {
   display: flex;
@@ -66,6 +65,18 @@
   line-height: 0;
   align-self: center;
   flex: 0 0 150px;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 70%, #1A1A1A 100%);
+  }
 }
 
 @include breakpoint(sm) {

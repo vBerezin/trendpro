@@ -17,5 +17,6 @@ import '~containers/sectionSteps';
 import '~containers/sectionPricing';
 import '~containers/sectionWorks';
 import '~containers/footer';
+import '~containers/popupVideo';
 
 import './style.scss';

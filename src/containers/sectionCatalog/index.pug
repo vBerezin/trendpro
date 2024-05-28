@@ -2,82 +2,11 @@ include ~components/section/mixin
 include ~components/sectionHead/mixin
 include ~components/sectionTitle/mixin
 include ~components/container/mixin
-include ~components/image/mixin
 include ~components/picture/mixin
-include ~components/button/mixin
-include ~containers/video/mixin
+include ./tab
 
 -
 	items = [
-		{
-			nav: 'Съемка Reels',
-			slider: {
-				title: 'Наши работы',
-				reels: true,
-				videos: [
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						}
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						}
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						}
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						}
-					},
-					{
-						src: '/images/temp/work-2.png',
-						srcset: {
-							'2x': '/images/temp/work-2@2x.png'
-						},
-						title: `Фитнес-резинки`,
-						brand: 'Amazon',
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						},
-						title: `Фитнес-резинки`,
-						brand: 'Amazon',
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						},
-					},
-					{
-						src: '/images/temp/work-2.png',
-						srcset: {
-							'2x': '/images/temp/work-2@2x.png'
-						},
-						title: `Фитнес-резинки`,
-						brand: 'Amazon',
-					},
-					{
-						src: '/images/temp/work.png',
-						srcset: {
-							'2x': '/images/temp/work@2x.png'
-						}
-					},
-				]
-			}
-		},
 		{
 			nav: 'Рекламные видео',
 			slider: {
@@ -143,19 +72,221 @@ include ~containers/video/mixin
 			}
 		},
 		{
-			nav: 'Презентационный ролик',
+			nav: 'Имиджевое видео',
+			slider: {
+				title: 'Наши работы',
+				videos: [
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+				]
+			}
+		},
+		{
+			nav: 'Презентационное видео о компании',
+			slider: {
+				title: 'Наши работы',
+				videos: [
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+				]
+			}
 		},
 		{
 			nav: 'Упаковка маркетплейсов',
+			slider: {
+				title: 'Наши работы',
+				reels: true,
+				videos: [
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						}
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						}
+					},
+					{
+						src: '/images/temp/work-2.png',
+						srcset: {
+							'2x': '/images/temp/work-2@2x.png'
+						},
+						title: `Фитнес-резинки`,
+						brand: 'Amazon',
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						title: `Фитнес-резинки`,
+						brand: 'Amazon',
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+					},
+					{
+						src: '/images/temp/work-2.png',
+						srcset: {
+							'2x': '/images/temp/work-2@2x.png'
+						},
+						title: `Фитнес-резинки`,
+						brand: 'Amazon',
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						}
+					},
+				]
+			}
 		},
 		{
-			nav: 'Имиджевые видео',
+			nav: 'Съемка подкастов',
+			slider: {
+				title: 'Наши работы',
+				videos: [
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+				]
+			}
 		},
 		{
-			nav: '2D и 3D графика',
-		},
-		{
-			nav: 'Дипфейки',
+			nav: 'Создание DEEPFAKE',
 			slider: {
 				title: 'Наша работа',
 				videos: [
@@ -164,6 +295,70 @@ include ~containers/video/mixin
 						srcset: {
 							'2x': '/images/temp/work@2x.png'
 						}
+					},
+				]
+			}
+		},
+		{
+			nav: 'Создание 2D и 3D графики',
+			slider: {
+				title: 'Наши работы',
+				videos: [
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
+					},
+					{
+						src: '/images/temp/work.png',
+						srcset: {
+							'2x': '/images/temp/work@2x.png'
+						},
+						link: 'Подробнее о кейсе'
 					},
 				]
 			}
@@ -234,59 +429,6 @@ include ~containers/video/mixin
 		},
 	]
 
-mixin tab(data)
-	-
-		sliderData = items[data.index].slider
-		hasSlider = sliderData
-			? sliderData.videos && sliderData.videos.length > 1
-			|| sliderData.images && sliderData.images.length > 1
-			: false
-	.sectionCatalog__tab(data-tab=data.index class=data.index === 0 && 'is-active')
-		.sectionCatalog__tab-body
-			.sectionCatalog__tab-head
-				.sectionCatalog__tab-title #{data.title}
-				| !{data.text}
-			.sectionCatalog__tab-text
-				block
-			.sectionCatalog__tab-button
-				+button({
-					text: 'УЗНАТЬ СТОИМОСЬ',
-					mods: ['block']
-				})
-		if (sliderData)
-			.sectionCatalog__tab-aside
-				.sectionCatalog__slider-head(
-					class=(sliderData.reels && 'sectionCatalog__slider-head--reels')) #{sliderData.title}
-				.sectionCatalog__slider(data-ref=(hasSlider && "slider"))
-					if (sliderData.images)
-						each image in sliderData.images
-							.sectionCatalog__slide.sectionCatalog__slide--image
-								.sectionCatalog__image
-									+image(image)
-								if (image.link)
-									.sectionCatalog__slide-footer
-										a(href="#" target="_blank").sectionCatalog__slide-link #{image.link}
-					if (sliderData.videos)
-						each video in sliderData.videos
-							.sectionCatalog__slide(class=(sliderData.reels ? 'sectionCatalog__slide--reels' : 'sectionCatalog__slide--video'))
-								+video({
-									class: sliderData.reels
-										? 'sectionCatalog__reels'
-										: 'sectionCatalog__video',
-									image: video,
-									attributes: {
-										target: '_blank',
-										href: 'https://youtu.be/q_AIjV_3hrM',
-									}
-								})
-								if (video.title || video.brand)
-									.sectionCatalog__slide-footer
-										.sectionCatalog__slide-title #{video.title}
-										.sectionCatalog__slide-brand #{video.brand}
-								if (video.link)
-									.sectionCatalog__slide-footer
-										a(href="#" target="_blank").sectionCatalog__slide-link #{video.link}
-
 +section({
 	class: ['sectionCatalog', 'js-sectionCatalog']
 })
@@ -317,7 +459,7 @@ mixin tab(data)
 			]
 		})
 	+container
-		+sectionHead
+		+sectionHead({class: 'sectionCatalog__head'})
 			+sectionTitle Что мы делаем лучше других
 			p У нас заказывают рекламные ролики, фильмы-презентации, клипы и другие форматы.
 		nav.sectionCatalog__nav
@@ -330,25 +472,13 @@ mixin tab(data)
 							class=index === 0 && 'is-active') #{item.nav}
 	.sectionCatalog__tabs
 		+tab({
+			active: true,
 			index: 0,
-			title: 'Reels и Stories',
-			text: 'Мы единственная команда на рынке, готовая выпускать видеоконтент для ваших социальных сетей «под ключ»',
-		})
-			.sectionCatalog__tab-subtitle Над вашим проектом, будут трудиться:
-			.sectionCatalog__lists
-				ul.sectionCatalog__list
-					li тренера речевой харизмы
-					li редактор и копирайтеры
-					li съемочная команда
-				ul.sectionCatalog__list
-					li сценаристы
-					li продюсер
-		+tab({
-			index: 1,
+			slider: items[0].slider,
 			title: 'Рекламные видео',
 			text: `
-			<p>Реклама раскрывает преимущества и особенности товара, побуждая зрителя к покупке.</p>
-			<p>30-секундный ролик расскажет о вашем продукте больше и лучше, чем самый навороченный сайт.</p>
+				<p>Реклама раскрывает преимущества и особенности товара, побуждая зрителя к покупке.</p>
+				<p>30-секундный ролик расскажет о вашем продукте больше и лучше, чем самый навороченный сайт.</p>
 			`,
 		})
 			.sectionCatalog__tab-subtitle Когда пригодится?
@@ -359,26 +489,8 @@ mixin tab(data)
 				li привлечение новых клиентов
 				li поддержка имиджа и лояльности
 		+tab({
-			index: 2,
-			title: 'Презентационное видео о компании',
-			text: `Рассказ о компании и демонстрация ее ценностей через художественные и эмоциональный приемы.`,
-		})
-			.sectionCatalog__tab-subtitle Когда пригодится?
-			ul.sectionCatalog__list
-				li поиск партнеров и клиентов
-				li привлечение инвестиций
-				li выход на новые рынки
-				li ребрендинг
-		+tab({
-			index: 3,
-			title: 'Упаковка маркетплейсов',
-			text: `
-				<p>Презентация или реклама продукта на любых маркетплейсах мира.</p>
-				<p>Тщательно изучим ваш товар и покажем его с лучшей стороны. Мы поможем вам вызвать у покупателя желание купить его.</p>
-			`,
-		})
-		+tab({
-			index: 4,
+			index: 1,
+			slider: items[1].slider,
 			title: 'Имиджевое видео',
 			text: 'Креативный рассказ о компании. Такие ролики размещают на сайте, показывают на встречах и включают на публичных мероприятиях.',
 		})
@@ -392,7 +504,52 @@ mixin tab(data)
 				li поиск партнёров
 				li ребрендинг
 		+tab({
+			index: 2,
+			slider: items[2].slider,
+			title: 'Презентационное видео о компании',
+			text: `Рассказ о компании и демонстрация ее ценностей через художественные и эмоциональный приемы.`,
+		})
+			.sectionCatalog__tab-subtitle Когда пригодится?
+			ul.sectionCatalog__list
+				li поиск партнеров и клиентов
+				li привлечение инвестиций
+				li выход на новые рынки
+				li ребрендинг
+
+
+		+tab({
+			index: 3,
+			slider: items[3].slider,
+			title: 'Упаковка маркетплейсов',
+			text: `
+				<p>Презентация или реклама продукта на любых маркетплейсах мира.</p>
+				<p>Тщательно изучим ваш товар и покажем его с лучшей стороны. Мы поможем вам вызвать у покупателя желание купить его.</p>
+			`,
+		})
+		+tab({
+			index: 4,
+			slider: items[4].slider,
+			title: 'Съемка подкастов',
+			text: `Cъемка видеоподкаста вместе с предпринимателем или собственником/представителем бизнеса, а также последующее дробление его на риллсы (от 10 до 30шт).`,
+		})
+			.sectionCatalog__tab-subtitle2 Основная задача данного продукта - донести через живой, непринужденный диалог нужную информацию:
+			ul.sectionCatalog__list
+				li подтверждение экспертности человека в кадре;
+				li выгоду от товара/услуги/сотрудничества;
+				li раскрытие личности владельца бизнеса;
+				li нативную рекламу продукта/услуги;
+				li ценности личности/компании.
+		+tab({
 			index: 5,
+			slider: items[5].slider,
+			title: 'Создание DEEPFAKE',
+			text: `Да! Мы создаем дипфейки!<br>Для вас мы сможем воссоздать практически любого популярного персонажа и внедрить в ваш видеоролик!`,
+		})
+			.sectionCatalog__tab-subtitle2 Мы уже успешно реализовали создание точных копий:
+			| Квентина Тарантино для телеканала ТНТ, Джену Ортегу (актриса из сериала Уэнсдэй), на чьем ютуб канале уже более 5 миллионов подписчиков, Леонардо Ди Каприо, Марго Роби, Роберта Паттисона и многих других.
+		+tab({
+			index: 6,
+			slider: items[6].slider,
 			title: 'Создание 2D и 3D графики',
 			text: 'Возьмемся за реализацию самых смелых идей с помощью анимации и компьютерной графики.',
 		})
@@ -406,14 +563,8 @@ mixin tab(data)
 				li VR и дополненная реальность
 				li визуализации для сайтов и приложений
 		+tab({
-			index: 6,
-			title: 'Создание DEEPFAKE',
-			text: `Да! Мы создаем дипфейки!<br>Для вас мы сможем воссоздать практически любого популярного персонажа и внедрить в ваш видеоролик!`,
-		})
-			.sectionCatalog__tab-subtitle2 Мы уже успешно реализовали создание точных копий:
-			p Квентина Тарантино для телеканала ТНТ, Джену Ортегу (актриса из сериала Уэнсдэй), на чьем ютуб канале уже более 5 миллионов подписчиков, Леонардо Ди Каприо, Марго Роби, Роберта Паттисона и многих других.
-		+tab({
 			index: 7,
+			slider: items[7].slider,
 			title: 'Коммерческая фотосъёмка',
 			text: `Жанр фотографии на стыке рекламы и искусства. Применим для всех сфер бизнеса и коммуникаций.`,
 		})

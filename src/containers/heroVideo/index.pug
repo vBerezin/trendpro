@@ -4,6 +4,23 @@ include ~components/image/mixin
 include ~containers/breadcrumbs/mixin
 include ~containers/video/mixin
 
+-
+	videoProps = {
+		class: 'heroVideo__video',
+		image: {
+			src: '/images/hero-video.png',
+			srcset: {
+				'2x': '/images/hero-video@2x.png'
+			}
+		},
+		attributes: {
+			target: '_blank',
+			href: 'https://youtu.be/q_AIjV_3hrM',
+			'data-click': 'popup:video',
+			'data-popup-id': 'popup-video',
+			'data-video-id': 'q_AIjV_3hrM'
+		}
+	}
 .heroVideo
 	+container
 		.heroVideo__breadcrumbs
@@ -30,19 +47,7 @@ include ~containers/video/mixin
 							class: 'heroVideo__media-figure-2',
 							src: '/images/figures/heroVideo-figure-2.png'
 						})
-						+video({
-							class: 'heroVideo__video',
-							image: {
-								src: '/images/hero-video.png',
-								srcset: {
-									'2x': '/images/hero-video@2x.png'
-								}
-							},
-							attributes: {
-								target: '_blank',
-								href: 'https://youtu.be/q_AIjV_3hrM',
-							}
-						})
+						+video(videoProps)
 				.heroVideo__text
 					strong Вам достаточно описать задачу
 					p Мы сделаем остальную работу, уложимся в бюджет и сдадим материал раньше срока.
@@ -64,17 +69,5 @@ include ~containers/video/mixin
 						class: 'heroVideo__media-figure-2',
 						src: '/images/figures/heroVideo-figure-2.png'
 					})
-					+video({
-						class: 'heroVideo__video',
-						image: {
-							src: '/images/hero-video.png',
-							srcset: {
-								'2x': '/images/hero-video@2x.png'
-							}
-						},
-						attributes: {
-							target: '_blank',
-							href: 'https://youtu.be/q_AIjV_3hrM',
-						}
-					})
+					+video(videoProps)
 				.heroVideo__media-text Просто посмотрите, как мы круто снимаем.

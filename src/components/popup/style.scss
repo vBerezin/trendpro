@@ -82,6 +82,17 @@
   }
 }
 
+.popup.popup--video {
+  .popup__inner {
+    width: auto;
+  }
+  .popup__body {
+    padding: 0;
+    border-radius: 0;
+    background: none;
+  }
+}
+
 @include breakpoint(sm) {
   .popup__inner {
     width: 320px;

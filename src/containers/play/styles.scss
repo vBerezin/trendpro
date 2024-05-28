@@ -1,0 +1,18 @@
+@import "~styles/mixins/triangle.scss";
+
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #DFFF13;
+  color: #DFFF13;
+  background: none;
+
+  svg {
+    font-size: 0.5em;
+  }
+}

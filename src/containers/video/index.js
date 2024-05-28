@@ -1,3 +1,3 @@
 import './styles.scss';
 
-import '~components/play';
+import '~containers/play';

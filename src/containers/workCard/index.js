@@ -1,4 +1,3 @@
 import './styles.scss';
 
-import '~components/button'
-import '~components/image'
+import '~containers/video'

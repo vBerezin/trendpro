@@ -4,11 +4,25 @@
 
 .sectionFeedback {
   color: #fff;
-  background-color: #1A1919;
+  background-color: #282828;
   background-image: linear-gradient(to bottom, #282828, #1A1919);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
 }
-.sectionFeedback--2 {
-  background-image: linear-gradient(to bottom, #121212, #2B2B2B);
+.sectionFeedback__inner {
+  position: relative;
+}
+.sectionFeedback__figure {
+  position: absolute;
+  right: -150px;
+  top: -100px;
+  z-index: -1;
+}
+.sectionFeedback__title,
+.sectionFeedback__text,
+.sectionFeedback__privacy {
+  padding-left: 30px;
 }
 .sectionFeedback__privacy {
   font-size: 10px;
@@ -23,6 +37,11 @@
 }
 .sectionFeedback__field {
   margin-bottom: 16px;
+}
+.sectionFeedback__row {
+  background-color: #292929;
+  padding: 30px;
+  border-radius: 14px;
 }
 
 @include breakpoint(sm) {

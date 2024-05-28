@@ -1,3 +1,5 @@
 mixin swiperScrollbar(data)
-	.swiperScrollbar(class=data.class)
+	.swiperScrollbar(
+		class=data.class
+		class=mods('swiperScrollbar', data.mods))
 		.swiper-scrollbar&attributes(data.attributes)

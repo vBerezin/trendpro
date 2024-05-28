@@ -10,6 +10,7 @@ import '~containers/video'
 
 import {Handlers} from "~scripts/utils/Handlers";
 import {Swiper} from "~components/swiper";
+import {Scrollbar} from "~components/swiperScrollbar";
 import {Breakpoints} from "~components/breakpoints";
 
 (() => {
@@ -20,7 +21,6 @@ import {Breakpoints} from "~components/breakpoints";
   const swipers = new Map();
   const tabs = section.querySelectorAll('[data-tab]');
   const sliders = section.querySelectorAll('[data-ref="slider"]');
-  const playButtons = section.querySelectorAll('.play');
 
   function setActive(id) {
     tabs.forEach((el) => {
@@ -37,30 +37,25 @@ import {Breakpoints} from "~components/breakpoints";
   section.addEventListener('click', handleClick);
   sliders.forEach((el) => {
     const tab = el.closest('[data-tab]');
+    const scrollbar = tab.querySelector('[data-ref="scrollbar"]');
     const swiper = Swiper.init(el, {
-      loop: true,
-      slidesPerView: 'auto',
-      centeredSlides: true,
+      modules: [Scrollbar],
       longSwipes: false,
       spaceBetween: 0,
+      loop: false,
+      slidesPerView: 1,
+      centeredSlides: true,
       breakpoints: {
         [Breakpoints.points.md]: {
-          loop: true,
-          longSwipes: true,
-          centeredSlides: false,
+          slidesPerView: 1,
+          scrollbar: {
+            el: scrollbar,
+            hide: false,
+            draggable: true
+          },
         },
       }
     });
     swipers.set(tab.dataset.tab, swiper);
   });
-
-  Breakpoints.once(
-    ['xxs', 'xs', 'sm'],
-    () => {
-      playButtons.forEach((play) => play.classList.add('play--green'))
-    },
-    () => {
-      playButtons.forEach((play) => play.classList.remove('play--green'))
-    },
-  )
 })();

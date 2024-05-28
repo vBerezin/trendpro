@@ -1,5 +1,6 @@
 @import "~components/breakpoints/mixin";
 @import "~styles/mixins/image-cover.scss";
+@import "~styles/variables/transition.scss";
 
 .video {
   display: flex;
@@ -19,6 +20,12 @@
 }
 .video__play {
   font-size: 46px;
+  transition: $transition-time;
+}
+.video:hover {
+  .video__play {
+    transform: scale(1.1);
+  }
 }
 
 @include breakpoint(sm) {
@@ -28,6 +35,6 @@
 }
 @include breakpoint(md) {
   .video__play {
-    font-size: 50px;
+    font-size: 60px;
   }
 }

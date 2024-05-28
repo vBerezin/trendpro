@@ -1,0 +1,66 @@
+include ~components/swiperScrollbar/mixin
+include ~components/image/mixin
+include ~components/button/mixin
+include ~containers/video/mixin
+
+mixin tab(data)
+	- sliderData = data.slider
+	- hasSlider = sliderData ? sliderData.videos && sliderData.videos.length > 1 || sliderData.images && sliderData.images.length > 1 : false
+	.sectionCatalog__tab(data-tab=data.index class=data.active && 'is-active')
+		.sectionCatalog__tab-body
+			.sectionCatalog__tab-head
+				.sectionCatalog__tab-title #{data.title}
+				| !{data.text}
+			if (block)
+				.sectionCatalog__tab-text
+					block
+			.sectionCatalog__tab-button
+				+button({
+					text: 'УЗНАТЬ СТОИМОСЬ',
+					mods: ['block']
+				})
+		if (sliderData)
+			.sectionCatalog__tab-aside
+				.sectionCatalog__slider-head(class=(sliderData.reels && 'sectionCatalog__slider-head--reels')) #{sliderData.title}
+				.sectionCatalog__slider(
+					data-ref=(hasSlider && "slider")
+					class=(sliderData.reels && 'sectionCatalog__slider--reels')
+					)
+					if (sliderData.images)
+						each image in sliderData.images
+							.sectionCatalog__slide.sectionCatalog__slide--image
+								.sectionCatalog__image
+									+image(image)
+								if (image.link)
+									.sectionCatalog__slide-footer
+										a(href="#" target="_blank").sectionCatalog__slide-link #{image.link}
+					if (sliderData.videos)
+						each video in sliderData.videos
+							.sectionCatalog__slide
+								+video({
+									class: sliderData.reels ? 'sectionCatalog__reels' : 'sectionCatalog__video',
+									image: video,
+									attributes: {
+										target: '_blank',
+										href: 'https://youtu.be/q_AIjV_3hrM',
+										'data-click': 'popup:video',
+										'data-popup-id': 'popup-video',
+										'data-video-id': 'q_AIjV_3hrM'
+									}
+								})
+								if (video.title || video.brand)
+									.sectionCatalog__slide-footer
+										.sectionCatalog__slide-title #{video.title}
+										.sectionCatalog__slide-brand #{video.brand}
+								if (video.link)
+									.sectionCatalog__slide-footer
+										a(href="#" target="_blank").sectionCatalog__slide-link #{video.link}
+				if (hasSlider)
+					.sectionCatalog__slider-footer(class=(sliderData.reels && 'sectionCatalog__slider-footer--reels'))
+						+swiperScrollbar({
+							mods: ['green'],
+							class: 'sectionCatalog__scrollbar',
+							attributes: {
+								'data-ref': 'scrollbar'
+							}
+						})

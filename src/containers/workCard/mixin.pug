@@ -1,19 +1,17 @@
-include ~components/image/mixin
-include ~components/button/mixin
+include ~containers/video/mixin
 
 mixin workCard(data)
 	-
 		data = data || {};
-		data.button.mods = ['block']
+		data.video.class = 'workCard__video'
 	article.workCard(
 		class=data.class
 		class=mods('workCard', data.mods)
 	)&attributes(data.attributes)
-		.workCard__inner
-			.workCard__image
-				+image(data.image)
-			.workCard__head
-				.workCard__label #{data.label}
-				h4.workCard__title !{data.title}
-		.workCard__button
-			+button(data.button)
+		.workCard__head
+			.workCard__label #{data.label}
+			h4.workCard__title !{data.title}
+		.workCard__body
+			+video(data.video)
+		.workCard__footer
+			a()&attributes(data.button.attributes).workCard__link #{data.button.text}

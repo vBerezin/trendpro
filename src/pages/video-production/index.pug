@@ -2,16 +2,22 @@ extends ~containers/layoutPage/index
 
 include ~components/container/mixin
 include ~containers/sectionFeedback/mixin
+include ~containers/popupVideo/mixin
 
 block variables
 	- TITLE = 'Видео продакшн'
 
 block main
 	include ~containers/heroVideo/index
-	include ~containers/sectionCeo/index
 	include ~containers/sectionCatalog/index
 	include ~containers/sectionPartners/index
 	include ~containers/sectionSteps/index
 	include ~containers/sectionPricing/index
 	include ~containers/sectionWorks/index
 	+sectionFeedback()
+	include ~containers/sectionCeo/index
+	+popupVideo({
+		attributes: {
+			id: 'popup-video',
+		}
+	})

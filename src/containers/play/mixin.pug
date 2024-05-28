@@ -1,3 +1,5 @@
+include ~components/icon/mixin
+
 mixin play(data)
 	-
 		data = data || {};
@@ -5,3 +7,4 @@ mixin play(data)
 		class=data.class
 		class=mods('play', data.mods)
 	)&attributes(data.attributes)
+		+icon('play')

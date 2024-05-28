@@ -11,7 +11,7 @@
   position: absolute;
   z-index: -1;
   right: 0;
-  top: -100px;
+  top: 30px;
   pointer-events: none;
 }
 .sectionWorks__slider-wrapper {
@@ -23,49 +23,40 @@
 .sectionWorks__slide {
   padding: 10px;
 }
+.sectionWorks__slider-controls{
+  display: none;
+}
 .sectionWorks__prev,
 .sectionWorks__next {
-  position: absolute;
-  top: 50%;
-  margin-top: -20px;
-  width: 100px;
-  height: 40px;
+  display: block;
+  background: none;
   color: #fff;
   cursor: pointer;
   border: none;
-  padding: 5px;
-  font-size: 30px;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
   z-index: 10;
 
   .icon {
-    font-size: 1em;
+    font-size: 38px;
   }
 }
-.sectionWorks__prev {
-  left: -60px;
-  text-align: left;
-  border-radius: 10px 0 0 10px;
-  background: linear-gradient(to right, #2E2E2E, #111111);
-}
-.sectionWorks__next {
-  right: -60px;
-  text-align: right;
-  border-radius: 0 10px 10px 0;
-  background: linear-gradient(to left, #2E2E2E, #111111);
+.sectionWorks__slider-pagination {
+  margin: 0 20px;
 }
 .sectionWorks__slider-pagination,
-.sectionWorks__slider-nav {
-  display: none;
-}
 .sectionWorks__swipe {
   font-size: 0;
   line-height: 0;
   text-align: center;
-  margin-top: 20px;
 
   img {
     height: 40px;
   }
+}
+.sectionWorks__swipe {
+  margin-top: 20px;
 }
 
 @include breakpoint(sm) {
@@ -76,22 +67,15 @@
       height: 60px;
     }
   }
-  .sectionWorks__figure {
-    top: -200px;
-  }
 }
 @include breakpoint(md) {
-  .sectionWorks__figure {
-    top: -250px;
-  }
   .sectionWorks__swipe {
     display: none;
   }
-  .sectionWorks__slider-nav {
-    display: block;
-  }
-  .sectionWorks__slider-pagination {
-    display: block;
-    margin-top: 40px;
+  .sectionWorks__slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
   }
 }

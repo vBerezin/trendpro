@@ -70,11 +70,6 @@ include ~containers/workCard/mixin
 			p С описанием задач, решений и видео-результатом.
 		.sectionWorks__body
 			.sectionWorks__slider-wrapper
-				.sectionWorks__slider-nav
-					button.sectionWorks__prev(data-ref="slider.prev")
-						+icon('left')
-					button.sectionWorks__next(data-ref="slider.next")
-						+icon('right')
 				.sectionWorks__slider(data-ref="slider")
 					each index in [0,1,2,0,1,2,3,4,5,3,4,5]
 						- item = items[index]
@@ -82,26 +77,40 @@ include ~containers/workCard/mixin
 							+workCard({
 								label: item.label,
 								title: item.title,
-								image: {
-									src: `/images/work-${index + 1}.png`,
-									srcset: {
-										'2x': `/images/work-${index + 1}@2x.png`
+								video: {
+									image: {
+										src: `/images/work-${index + 1}.png`,
+										srcset: {
+											'2x': `/images/work-${index + 1}@2x.png`
+										},
+									},
+									attributes: {
+										target: '_blank',
+										href: 'https://youtu.be/q_AIjV_3hrM',
+										'data-click': 'popup:video',
+										'data-popup-id': 'popup-video',
+										'data-video-id': 'q_AIjV_3hrM'
 									}
 								},
 								button: {
-									text: 'ПОДРОБНЕЕ О КЕЙСЕ',
+									text: 'Подробнее о кейсе',
 									attributes: {
 										href: '#'
 									}
 								}
 							})
-			.sectionWorks__slider-pagination
-				+swiperPagination({
-					mods: ['square', 'white'],
-					attributes: {
-						'data-ref': 'pagination'
-					}
-				})
+			.sectionWorks__slider-controls
+				button.sectionWorks__prev(data-ref="slider.prev")
+					+icon('arrow-left-circle')
+				.sectionWorks__slider-pagination
+					+swiperPagination({
+						mods: ['square', 'white'],
+						attributes: {
+							'data-ref': 'pagination'
+						}
+					})
+				button.sectionWorks__next(data-ref="slider.next")
+					+icon('arrow-right-circle')
 			.sectionWorks__swipe
 				+image({
 					src: '/images/swipe.gif'
